@@ -90,27 +90,27 @@
                 <div class="comparison-table">
                     <div class="comparison-row header">
                         <div></div>
-                        <div class="col-betterhelp">Pameltex</div>
+                        <div class="col-brand">Pameltex</div>
                         <div class="col-other">Traditional</div>
                     </div>
                     <div class="comparison-row">
                         <div class="feature">Convenience</div>
-                        <div class="col-betterhelp">Online & In-Person</div>
+                        <div class="col-brand">Online & In-Person</div>
                         <div class="col-other">In-Office Only</div>
                     </div>
                     <div class="comparison-row">
                         <div class="feature">Protocols</div>
-                        <div class="col-betterhelp">International</div>
+                        <div class="col-brand">International</div>
                         <div class="col-other">Varies</div>
                     </div>
                     <div class="comparison-row">
                         <div class="feature">Corporate Support</div>
-                        <div class="col-betterhelp">Specialized Programs</div>
+                        <div class="col-brand">Specialized Programs</div>
                         <div class="col-other">Limited</div>
                     </div>
                     <div class="comparison-row">
                         <div class="feature">Cost</div>
-                        <div class="col-betterhelp">Affordable</div>
+                        <div class="col-brand">Affordable</div>
                         <div class="col-other">Expensive</div>
                     </div>
                 </div>
