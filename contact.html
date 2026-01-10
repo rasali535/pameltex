@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact Pameltex to book a counseling session or inquire about our corporate wellness programs. Call, email, or visit us in Gaborone.">
     <title>Contact Us - Pameltex</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Overpass:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <style>
         .form-group {
             margin-bottom: 20px;
@@ -108,25 +112,25 @@
 
                     <div
                         style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 4px solid var(--accent-orange);">
-                        <form action="#" method="POST">
+                        <form action="send_mail.php" method="POST">
                             <div class="form-group">
                                 <label for="name" class="form-label">Name *</label>
-                                <input type="text" id="name" class="form-input" required>
+                                <input type="text" id="name" name="name" class="form-input" required>
                             </div>
                             <div class="form-group">
                                 <label for="email" class="form-label">Email *</label>
-                                <input type="email" id="email" class="form-input" required>
+                                <input type="email" id="email" name="email" class="form-input" required>
                             </div>
                             <div class="form-group">
                                 <label for="type" class="form-label">Type of Consultation *</label>
-                                <select id="type" class="form-select">
+                                <select id="type" name="type" class="form-select">
                                     <option value="online">Online</option>
                                     <option value="in_person">In Person</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="message" class="form-label">Message *</label>
-                                <textarea id="message" class="form-textarea" required></textarea>
+                                <textarea id="message" name="message" class="form-textarea" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-solid" style="width: 100%;">Send Message</button>
                         </form>
@@ -144,6 +148,7 @@
                     href="#">These resources</a> can provide you with immediate help.</p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
