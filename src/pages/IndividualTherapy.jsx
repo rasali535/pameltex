@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 const IndividualTherapy = () => {
     return (
         <>
-            <section class="hero page-hero" style={{ padding: '60px 0', background: 'var(--bg-dark)' }}>
-                <div class="container">
-                    <h1 class="hero-title" style={{ fontSize: '36px' }}>Individual Therapy</h1>
-                    <p class="hero-subtitle">Personalized care for anxiety, stress, depression, and personal growth.</p>
+            <section className="hero page-hero" style={{ padding: '60px 0', background: 'var(--bg-dark)' }}>
+                <div className="container">
+                    <h1 className="hero-title" style={{ fontSize: '36px' }}>Individual Therapy</h1>
+                    <p className="hero-subtitle">Personalized care for anxiety, stress, depression, and personal growth.</p>
                 </div>
             </section>
 
-            <section class="content-section" style={{ padding: '80px 0' }}>
-                <div class="container">
+            <section className="content-section" style={{ padding: '80px 0' }}>
+                <div className="container">
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                        <h2 class="section-title">Is Therapy Right for You?</h2>
+                        <h2 className="section-title">Is Therapy Right for You?</h2>
                         <p style={{ fontSize: '18px', marginBottom: '30px', lineHeight: '1.8' }}>
                             Individual therapy focuses on "Common Disorders" such as anxiety, stress, and depression. Many
                             people wonder if their feelings are "normal" or if they need professional help.
@@ -55,7 +55,7 @@ const IndividualTherapy = () => {
                         </ul>
 
                         <div style={{ textAlign: 'center', marginTop: '50px' }}>
-                            <Link to="/contact" class="btn btn-solid"
+                            <Link to="/contact" className="btn btn-solid"
                                 style={{ padding: '15px 40px', fontSize: '18px' }}>Schedule a Consultation</Link>
                         </div>
                     </div>

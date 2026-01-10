@@ -1,14 +1,14 @@
 const FAQ = () => {
     return (
         <>
-            <section class="hero page-hero" style={{ padding: '60px 0', background: 'var(--bg-dark)' }}>
-                <div class="container">
-                    <h1 class="hero-title" style={{ fontSize: '36px' }}>Frequently Asked Questions</h1>
-                    <p class="hero-subtitle">Answers to common questions about our services.</p>
+            <section className="hero page-hero" style={{ padding: '60px 0', background: 'var(--bg-dark)' }}>
+                <div className="container">
+                    <h1 className="hero-title" style={{ fontSize: '36px' }}>Frequently Asked Questions</h1>
+                    <p className="hero-subtitle">Answers to common questions about our services.</p>
                 </div>
             </section>
-            <section class="content-section" style={{ padding: '60px 0' }}>
-                <div class="container">
+            <section className="content-section" style={{ padding: '60px 0' }}>
+                <div className="container">
                     <div style={{ maxWidth: '800px', margin: '0 auto', background: '#fff', padding: '40px', borderRadius: '8px', boxShadow: '0 5px 15px rgba(0,0,0,0.05)' }}>
                         <div style={{ marginBottom: '20px', borderBottom: '1px solid #eee', paddingBottom: '20px' }}>
                             <div style={{ fontWeight: '700', color: 'var(--brand-green)', marginBottom: '10px', fontSize: '18px' }}>Who are the counsellors?</div>

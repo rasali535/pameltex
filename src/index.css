@@ -343,6 +343,89 @@ a {
     font-weight: 500;
 }
 
+/* How It Works (BetterHelp Style) */
+.process-section {
+    padding: 80px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+}
+
+.step-circle {
+    width: 60px;
+    height: 60px;
+    background-color: var(--brand-light);
+    color: var(--brand-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.step p {
+    font-size: 15px;
+    color: #666;
+}
+
+/* Testimonials/Stories */
+.testimonials {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+    /* Cream */
+}
+
+.testimonial-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    min-width: 300px;
+    flex: 1;
+    border-top: 4px solid var(--brand-green);
+}
+
+.t-text {
+    font-size: 15px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.t-author {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
 /* Footer */
 .footer {
     background-color: #fff;
@@ -424,4 +507,67 @@ a {
         flex-direction: column;
         gap: 30px;
     }
+}
+
+/* Business / Corporate Page Specifics */
+.business-hero {
+    background-color: var(--bg-dark);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.business-features {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.b-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.b-card {
+    text-align: left;
+    padding: 20px;
+}
+
+.b-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--brand-green);
+    margin-bottom: 20px;
+}
+
+.b-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.b-text {
+    color: #666;
+    line-height: 1.6;
+}
+
+.cta-section {
+    background-color: var(--brand-light);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta-title {
+    color: var(--bg-dark);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }

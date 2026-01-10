@@ -1,39 +1,69 @@
+import { Link } from 'react-router-dom';
+
 const CorporateServices = () => {
     return (
         <>
-            <section class="hero page-hero" style={{ padding: '60px 0', background: 'var(--bg-dark)' }}>
-                <div class="container">
-                    <h1 class="hero-title" style={{ fontSize: '36px' }}>Corporate Services</h1>
-                    <p class="hero-subtitle">Wellness programs, workshops, and change management for a healthy workplace.</p>
+            <section className="business-hero">
+                <div className="container">
+                    <h1 className="hero-title" style={{ fontSize: '42px', maxWidth: '800px', margin: '0 auto 20px' }}>
+                        Mental health benefits for your workforce
+                    </h1>
+                    <p className="hero-subtitle" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                        Support your employees with the most convenient and affordable professional therapy service in Botswana.
+                    </p>
+                    <Link to="/contact" className="btn btn-solid" style={{ backgroundColor: '#fff', color: 'var(--brand-green)', borderColor: '#fff' }}>
+                        Request a Demo
+                    </Link>
                 </div>
             </section>
-            <section class="content-section" style={{ padding: '80px 0' }}>
-                <div class="container">
-                    <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-                        <div style={{ display: 'flex', gap: '40px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-                            <div style={{ flex: 1 }}>
-                                <h2 class="section-title" style={{ textAlign: 'left' }}>Supporting Your Workforce</h2>
-                                <p style={{ marginBottom: '20px' }}>
-                                    A healthy workforce is a productive workforce. Pameltex offers specialized corporate
-                                    counselling designed to address stress, burnout, and workplace conflicts.
-                                </p>
-                                <p>
-                                    We focus on employee well-being, fostering open communication, and utilizing a
-                                    strengths-based approach to improve overall organizational health.
-                                </p>
-                            </div>
-                            <div style={{ flex: 1, background: '#fff', padding: '30px', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', borderTop: '4px solid var(--accent-orange)', minWidth: '300px' }}>
-                                <h3 style={{ marginBottom: '15px', color: 'var(--brand-green)' }}>Our Corporate Solutions</h3>
-                                <ul style={{ listStylePosition: 'inside', lineHeight: 2 }}>
-                                    <li>Employee Wellness Programs</li>
-                                    <li>Stress Management Workshops</li>
-                                    <li>Change Management Consulting</li>
-                                    <li>Leadership Development</li>
-                                    <li>Conflict Resolution</li>
-                                </ul>
-                            </div>
+
+            <section className="business-features">
+                <div className="container">
+                    <h2 className="section-title">Why Pameltex for Business?</h2>
+                    <p className="section-desc">Comprehensive support designed for modern organizations.</p>
+
+                    <div className="b-grid">
+                        <div className="b-card">
+                            <div className="b-icon">🏢</div>
+                            <h3 className="b-title">Organization-Wide Wellness</h3>
+                            <p className="b-text">Implement a turnkey solution that addresses stress, burnout, and productivity across your entire team.</p>
+                        </div>
+                        <div className="b-card">
+                            <div className="b-icon">🔒</div>
+                            <h3 className="b-title">100% Confidential</h3>
+                            <p className="b-text">We adhere to strict international protocols. Employee utilization is anonymized to ensure trust and privacy.</p>
+                        </div>
+                        <div className="b-card">
+                            <div className="b-icon">📊</div>
+                            <h3 className="b-title">Utilization Reporting</h3>
+                            <p className="b-text">Receive aggregate insights into the mental health trends of your workforce to make informed HR decisions.</p>
+                        </div>
+                        <div className="b-card">
+                            <div className="b-icon">💰</div>
+                            <h3 className="b-title">Cost-Effective</h3>
+                            <p className="b-text">Pay only for what you use, or choose a flat-rate subscription model that fits your budget.</p>
+                        </div>
+                        <div className="b-card">
+                            <div className="b-icon">🎓</div>
+                            <h3 className="b-title">Training & Workshops</h3>
+                            <p className="b-text">Beyond 1-on-1 therapy, we offer group workshops on conflict resolution, leadership, and emotional intelligence.</p>
+                        </div>
+                        <div className="b-card">
+                            <div className="b-icon">🌍</div>
+                            <h3 className="b-title">Remote & In-Person</h3>
+                            <p className="b-text">Whether your team is in Gaborone or remote, we meet them where they are with flexible session formats.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className="cta-section">
+                <div className="container">
+                    <h2 className="cta-title">Ready to support your team?</h2>
+                    <p style={{ marginBottom: '30px', fontSize: '18px' }}>Get in touch to discuss a tailored package for your organization.</p>
+                    <Link to="/contact" className="btn btn-solid" style={{ backgroundColor: 'var(--bg-dark)', borderColor: 'var(--bg-dark)' }}>
+                        Contact Us Today
+                    </Link>
                 </div>
             </section>
         </>
