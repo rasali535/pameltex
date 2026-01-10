@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pameltex</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-p">P</span>ameltex
+                <span class="logo-sub">Leading Innovation</span>
+            </a>
+            <nav class="nav">
+                <a href="our-company.html" class="nav-link">Our Company</a>
+                <a href="individual-therapy.html" class="nav-link">Individual Therapy</a>
+                <a href="corporate-services.html" class="nav-link">Corporate Services</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#" class="btn btn-outline">Log in</a>
+                <a href="contact.html" class="btn btn-solid">Book Session</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero page-hero" style="padding: 60px 0; background: var(--bg-dark);">
+            <div class="container">
+                <h1 class="hero-title" style="font-size: 36px;">Contact Us</h1>
+                <p class="hero-subtitle">Get in touch to book your session or learn more.</p>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 80px 0;">
+            <div class="container">
+                <div class="contact-grid">
+                    <div>
+                        <h2 class="section-title" style="text-align: left;">Get in Touch</h2>
+                        <p style="margin-bottom: 30px;">Fill out the form to request a consultation or ask a question.
+                            We will get back to you as soon as possible.</p>
+
+                        <div style="background: #F9F9F9; padding: 25px; border-radius: 8px; margin-bottom: 20px;">
+                            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--accent-purple);">Visit Us</h3>
+                            <p>Plot 59716/36c Block 7<br>Gaborone, Botswana</p>
+                        </div>
+
+                        <div style="background: #F9F9F9; padding: 25px; border-radius: 8px; margin-bottom: 20px;">
+                            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--accent-purple);">Call or
+                                WhatsApp</h3>
+                            <p>+267 74 672 930<br>+267 72 534 203</p>
+                        </div>
+
+                        <div style="background: #F9F9F9; padding: 25px; border-radius: 8px;">
+                            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--accent-purple);">Email</h3>
+                            <p>info@pameltex.com<br>pameltex@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 4px solid var(--accent-orange);">
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name *</label>
+                                <input type="text" id="name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" id="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="type" class="form-label">Type of Consultation *</label>
+                                <select id="type" class="form-select">
+                                    <option value="online">Online</option>
+                                    <option value="in_person">In Person</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea id="message" class="form-textarea" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-solid" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p style="margin-bottom: 20px; color: #555;"><strong>Contact:</strong> +267 74 672 930 | info@pameltex.com |
+                Plot 59716/36c Block 7, Gaborone</p>
+            <p class="crisis-text">If you are in a crisis or any other person may be in danger - don't use this site. <a
+                    href="#">These resources</a> can provide you with immediate help.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
