@@ -443,7 +443,7 @@ a {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .nav {
         display: none;
         position: absolute;
