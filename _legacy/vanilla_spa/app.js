@@ -33,8 +33,8 @@ const Header = () => `
 const Footer = () => `
     <footer class="footer">
         <div class="container">
-            <p style="margin-bottom: 20px; color: #555;"><strong>Contact:</strong> +267 74 672 930 | info@pameltex.com |
-                Plot 59716/36c Block 7, Gaborone</p>
+            <p style="margin-bottom: 20px; color: #555;"><strong>Contact:</strong> +267 72 534 203 | info@pameltex.com |
+                Plot 18680 Khuhurutse St Phase 2, Gaborone</p>
             <p class="crisis-text">If you are in a crisis or any other person may be in danger - don't use this site. <a
                     href="#">These resources</a> can provide you with immediate help.</p>
         </div>
@@ -344,12 +344,12 @@ const Contact = () => `
 
                     <div style="background: #fff; padding: 25px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee;">
                         <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--brand-green);">Visit Us</h3>
-                        <p>Plot 59716/36c Block 7<br>Gaborone, Botswana</p>
+                        <p>Plot 18680 Khuhurutse St Phase 2<br>Gaborone, Botswana</p>
                     </div>
 
                     <div style="background: #fff; padding: 25px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee;">
                         <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--brand-green);">Call or WhatsApp</h3>
-                        <p>+267 74 672 930<br>+267 72 534 203</p>
+                        <p>+267 72 534 203</p>
                     </div>
 
                     <div style="background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #eee;">

@@ -48,12 +48,12 @@ const Contact = () => {
 
                             <div style={{ background: '#fff', padding: '25px', borderRadius: '8px', marginBottom: '20px', border: '1px solid #eee' }}>
                                 <h3 style={{ fontSize: '18px', marginBottom: '10px', color: 'var(--brand-green)' }}>Visit Us</h3>
-                                <p>Plot 18680 Khuhurutse St, Phase 2<br />Gaborone, Botswana</p>
+                                <p>Plot 18680 Khuhurutse St Phase 2<br />Gaborone, Botswana</p>
                             </div>
 
                             <div style={{ background: '#fff', padding: '25px', borderRadius: '8px', marginBottom: '20px', border: '1px solid #eee' }}>
                                 <h3 style={{ fontSize: '18px', marginBottom: '10px', color: 'var(--brand-green)' }}>Call or WhatsApp</h3>
-                                <p>+267 74 672 930<br />+267 72 534 203</p>
+                                <p>+267 72 534 203</p>
                             </div>
 
                             <div style={{ background: '#fff', padding: '25px', borderRadius: '8px', border: '1px solid #eee' }}>
