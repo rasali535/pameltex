@@ -104,29 +104,13 @@ a {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--bg-dark);
-    letter-spacing: -0.5px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* Ensure left alignment of subtext */
-    line-height: 1;
+    display: block;
 }
 
-.logo-p {
-    color: var(--brand-green);
-    font-size: 32px;
-    display: inline-block;
-}
-
-.logo-sub {
-    font-size: 10px;
-    color: #666;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: 2px;
+.logo-img {
+    height: 75px;
+    width: auto;
+    display: block;
 }
 
 .nav {
@@ -525,6 +509,10 @@ a {
     .stats-grid {
         flex-direction: column;
         gap: 30px;
+    }
+
+    .logo-img {
+        height: 50px;
     }
 }
 
