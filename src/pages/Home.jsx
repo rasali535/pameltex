@@ -10,7 +10,7 @@ const Home = () => {
 
             <section className="hero">
                 <div className="container hero-container">
-                    <h1 className="hero-title">You deserve to be happy.</h1>
+                    <h1 className="hero-title">Prioritising your Mental Health.</h1>
                     <p className="hero-subtitle">What type of therapy are you looking for?</p>
                     <div className="therapy-cards">
                         <Link to="/individual-therapy" className="card">
