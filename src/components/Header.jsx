@@ -15,6 +15,7 @@ const Header = () => {
                     <Link to="/our-company" className="nav-link" onClick={() => setIsMenuOpen(false)}>Our Company</Link>
                     <Link to="/individual-therapy" className="nav-link" onClick={() => setIsMenuOpen(false)}>Individual Therapy</Link>
                     <Link to="/corporate-services" className="nav-link" onClick={() => setIsMenuOpen(false)}>Corporate Services</Link>
+                    <Link to="/consultancy-services" className="nav-link" onClick={() => setIsMenuOpen(false)}>Consultancy Services</Link>
                     <Link to="/faq" className="nav-link" onClick={() => setIsMenuOpen(false)}>FAQ</Link>
                     <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
                     <Link to="/login" className="btn btn-outline" onClick={() => setIsMenuOpen(false)}>Log in</Link>

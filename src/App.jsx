@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Login from './pages/Login';
 import GetStarted from './pages/GetStarted';
+import ConsultancyServices from './pages/ConsultancyServices';
 import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -27,6 +28,7 @@ function App() {
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/get-started" element={<GetStarted />} />
+                    <Route path="/consultancy-services" element={<ConsultancyServices />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
