@@ -69,11 +69,39 @@ const GetStarted = () => {
                                     defaultValue=""
                                 >
                                     <option value="" disabled>Select a country</option>
+                                    {/* African Countries */}
+                                    <option value="Botswana">Botswana</option>
                                     <option value="South Africa">South Africa</option>
+                                    <option value="Zimbabwe">Zimbabwe</option>
+                                    <option value="Namibia">Namibia</option>
+                                    <option value="Zambia">Zambia</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                    <option value="Ghana">Ghana</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="Uganda">Uganda</option>
+                                    <option value="Mozambique">Mozambique</option>
+                                    <option value="Ethiopia">Ethiopia</option>
+                                    {/* North America */}
                                     <option value="United States">United States</option>
-                                    <option value="United Kingdom">United Kingdom</option>
                                     <option value="Canada">Canada</option>
+                                    <option value="Mexico">Mexico</option>
+                                    {/* Europe */}
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="France">France</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Ireland">Ireland</option>
+                                    {/* Asia Pacific */}
                                     <option value="Australia">Australia</option>
+                                    <option value="New Zealand">New Zealand</option>
+                                    <option value="India">India</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                    {/* Other */}
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
                         </div>

@@ -1,39 +1,39 @@
 :root {
-    /* BetterHelp Palette */
-    --bg-dark: #325343;
-    /* Deep Green Hero */
-    --bg-light: #fffcf6;
-    /* Cream Page Background */
+    /* New Palette: Purple, Teal, Green */
+    --brand-purple: #6B4C9A;
+    --brand-teal: #2A9D8F;
+    --brand-green: #2E8B57;
+
+    --bg-dark: var(--brand-purple);
+    /* Deep Purple Hero */
+    --bg-light: #fdfbf7;
+    /* Soft Cream Page Background */
     --text-white: #FFFFFF;
-    --text-dark: #252625;
+    --text-dark: #2D2D2D;
 
     /* Accents */
-    --brand-green: #397a4a;
-    /* Primary Action Green */
-    --brand-light: #A6DE9B;
-    /* Light Green Accent */
+    --brand-primary: var(--brand-purple);
+    --brand-accent: var(--brand-teal);
 
-    --accent-orange: #F5A623;
-    /* Keeping subtle Pameltex orange for legacy/contrast if needed */
-    --accent-purple: #325343;
-    /* Re-mapped to Brand Green for consistency */
+    --brand-light: #E0F2F1;
+    /* Light Teal Background */
 
-    /* Cards - BetterHelp uses specific light/pastel colors for these or white */
-    --card-1: #397a4a;
-    /* Individual - Green */
-    --card-2: #397a4a;
-    /* Couples - Green */
-    --card-3: #397a4a;
+    --accent-orange: #E9C46A;
+    /* Complementary Warmth */
+
+    /* Cards - Distinct Colors */
+    --card-1: var(--brand-purple);
+    /* Individual - Purple */
+    --card-2: var(--brand-teal);
+    /* Couples - Teal */
+    --card-3: var(--brand-green);
     /* Corporate - Green */
 
     --font-main: 'Overpass', sans-serif;
-    /* Hero Headings */
     --font-body: 'Inter', sans-serif;
-    /* Body Text */
 
-    --btn-primary: #5cb85c;
-    /* BetterHelp often uses a bright green for 'Get Started' */
-    --btn-hover: #4cae4c;
+    --btn-primary: var(--brand-teal);
+    --btn-hover: #21867a;
 }
 
 * {
@@ -129,7 +129,7 @@ a {
 }
 
 .nav-link:hover {
-    color: var(--brand-green);
+    color: var(--brand-purple);
 }
 
 .btn {
@@ -148,19 +148,19 @@ a {
 }
 
 .btn-outline:hover {
-    border-color: var(--brand-green);
-    color: var(--brand-green);
+    border-color: var(--brand-teal);
+    color: var(--brand-teal);
 }
 
 .btn-solid {
-    background-color: var(--brand-green);
+    background-color: var(--brand-teal);
     color: #fff;
-    border: 2px solid var(--brand-green);
+    border: 2px solid var(--brand-teal);
 }
 
 .btn-solid:hover {
-    background-color: #2e613b;
-    border-color: #2e613b;
+    background-color: #21867a;
+    border-color: #21867a;
 }
 
 .menu-toggle {
@@ -246,8 +246,33 @@ a {
     top: 50%;
     transform: translateY(-50%);
     font-size: 24px;
-    color: var(--brand-green);
+    color: var(--brand-teal);
     opacity: 0.5;
+}
+
+/* Card Specific Colors */
+.card:nth-child(1) .card-label {
+    color: var(--brand-purple);
+}
+
+.card:nth-child(1) .card-arrow {
+    color: var(--brand-purple);
+}
+
+.card:nth-child(2) .card-label {
+    color: var(--brand-teal);
+}
+
+.card:nth-child(2) .card-arrow {
+    color: var(--brand-teal);
+}
+
+.card:nth-child(3) .card-label {
+    color: var(--brand-green);
+}
+
+.card:nth-child(3) .card-arrow {
+    color: var(--brand-green);
 }
 
 /* Stats */
@@ -743,4 +768,361 @@ a {
 
 .animate-fade-in {
     animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* DASHBOARD STYLES */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.dash-sidebar {
+    width: 280px;
+    background-color: #fff;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.dash-logo {
+    padding: 0 30px;
+    margin-bottom: 50px;
+}
+
+.dash-logo h2 {
+    color: var(--brand-purple);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.dash-nav {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dash-nav-item {
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    font-family: var(--font-body);
+}
+
+.dash-nav-item:hover {
+    background-color: #f9f9f9;
+    color: var(--brand-purple);
+}
+
+.dash-nav-item.active {
+    background-color: var(--brand-light);
+    color: var(--brand-teal);
+    border-right: 3px solid var(--brand-teal);
+}
+
+.dash-nav-item span {
+    font-size: 20px;
+}
+
+.dash-footer {
+    padding: 30px;
+    border-top: 1px solid #eee;
+}
+
+.dash-logout {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.dash-logout:hover {
+    color: #d14646;
+}
+
+.dash-content {
+    flex: 1;
+    margin-left: 280px;
+    /* Match sidebar width */
+    padding: 40px;
+}
+
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.dash-welcome h1 {
+    font-size: 32px;
+    color: var(--bg-dark);
+    margin-bottom: 10px;
+}
+
+.dash-welcome p {
+    color: #666;
+    font-size: 16px;
+}
+
+.dash-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background-color: var(--brand-light);
+    color: var(--brand-teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.dash-section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+    color: var(--text-dark);
+}
+
+.view-all-btn {
+    background: none;
+    border: none;
+    color: var(--brand-teal);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Mood Card */
+.mood-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eee;
+}
+
+.mood-card h3 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+.mood-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.mood-btn {
+    font-size: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.mood-btn:hover {
+    transform: scale(1.2);
+    background-color: #f5f5f5;
+}
+
+.mood-btn.selected {
+    transform: scale(1.3);
+    background-color: #e8f5e9;
+}
+
+.mood-response {
+    color: var(--brand-green);
+    font-weight: 500;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Resources Grid */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.resource-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #eee;
+    border-top: 4px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.resource-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.resource-content h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.resource-content p {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.resource-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888;
+    background: #f5f5f5;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.resource-action {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.resource-card:hover .resource-action {
+    background-color: var(--brand-teal);
+    border-color: var(--brand-teal);
+    color: #fff;
+}
+
+/* Session Card */
+.session-card {
+    background: linear-gradient(135deg, var(--brand-purple), var(--brand-teal));
+    border-radius: 16px;
+    padding: 40px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.session-info h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.session-time {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.session-doc {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.session-action {
+    display: flex;
+    gap: 15px;
+}
+
+.session-action .btn-outline {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.session-action .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+
+.session-action .btn-solid {
+    background-color: #fff;
+    color: var(--brand-teal);
+    border-color: #fff;
+}
+
+.session-action .btn-solid:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 992px) {
+    .dash-sidebar {
+        display: none;
+        /* Simple mobile fix for now */
+    }
+
+    .dash-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .session-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }

@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import GetStarted from './pages/GetStarted';
 import ConsultancyServices from './pages/ConsultancyServices';
 import NotFound from './pages/NotFound';
+import Dashboard from './pages/Dashboard';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/get-started" element={<GetStarted />} />
                     <Route path="/consultancy-services" element={<ConsultancyServices />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
