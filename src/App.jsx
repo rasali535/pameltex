@@ -8,7 +8,7 @@ import OurCompany from './pages/OurCompany';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Login from './pages/Login';
-
+import SignUp from './pages/SignUp';
 import ConsultancyServices from './pages/ConsultancyServices';
 import NotFound from './pages/NotFound';
 import Dashboard from './pages/Dashboard';
@@ -28,6 +28,7 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<SignUp />} />
 
                     <Route path="/consultancy-services" element={<ConsultancyServices />} />
                     <Route path="/dashboard" element={<Dashboard />} />

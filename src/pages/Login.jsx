@@ -51,6 +51,9 @@ const Login = () => {
                     <div style={{ marginTop: '20px', textAlign: 'center', fontSize: '14px' }}>
                         <a href="#" style={{ color: 'var(--brand-green)', textDecoration: 'none' }}>Forgot password?</a>
                     </div>
+                    <div style={{ textAlign: 'center', marginTop: '20px', fontSize: '14px', color: '#666' }}>
+                        Don't have an account? <Link to="/signup" style={{ color: 'var(--brand-teal)', fontWeight: '600' }}>Sign Up</Link>
+                    </div>
                 </div>
             </div>
         </section>
