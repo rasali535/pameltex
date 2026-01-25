@@ -8,6 +8,81 @@ const Dashboard = () => {
     const [userName, setUserName] = useState('Client');
     const [sessionData, setSessionData] = useState(null);
     const [selectedResource, setSelectedResource] = useState(null); // For the modal viewer
+    const [assessmentSubmitted, setAssessmentSubmitted] = useState(false);
+
+    // Check if assessment was already done today
+    useEffect(() => {
+        const lastAssessment = localStorage.getItem('pameltex_assessment_date');
+        const today = new Date().toDateString();
+        if (lastAssessment === today) {
+            setAssessmentSubmitted(true);
+        }
+    }, []);
+
+    const SelfAssessmentForm = () => {
+        const [scores, setScores] = useState({ q1: 5, q2: 5, q3: 5, q4: 5, q5: 5 });
+
+        const handleSubmit = () => {
+            // Save to local storage (simulating backend save)
+            localStorage.setItem('pameltex_assessment_date', new Date().toDateString());
+            localStorage.setItem('pameltex_last_scores', JSON.stringify(scores));
+            setAssessmentSubmitted(true);
+            window.scrollTo(0, 0);
+        };
+
+        const questions = [
+            { id: 'q1', text: "How would you rate your overall stress level today?" },
+            { id: 'q2', text: "How intense has your anxiety been in the last 24 hours?" },
+            { id: 'q3', text: "To what extent have you felt down, depressed, or hopeless?" },
+            { id: 'q4', text: "How poor was your sleep quality last night?" },
+            { id: 'q5', text: "How difficult was it to handle your daily tasks today?" }
+        ];
+
+        return (
+            <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                    <h2 style={{ color: 'var(--brand-purple)', marginBottom: '10px' }}>Daily Mental Wellness Check</h2>
+                    <p style={{ color: '#666' }}>Rate each area from 1 to 10.</p>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '10px', fontSize: '14px', fontWeight: 'bold' }}>
+                        <span style={{ color: 'var(--brand-green)' }}>1 = Good / Low Intensity</span>
+                        <span style={{ color: 'red' }}>10 = Extremely Bad / High Intensity</span>
+                    </div>
+                </div>
+
+                {questions.map((q, idx) => (
+                    <div key={q.id} style={{ marginBottom: '30px', background: '#f9f9f9', padding: '20px', borderRadius: '8px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px' }}>
+                            <label style={{ fontWeight: 'bold', fontSize: '16px' }}>{idx + 1}. {q.text}</label>
+                            <span style={{ fontWeight: 'bold', color: 'var(--brand-teal)' }}>Score: {scores[q.id]}</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                            <span style={{ fontSize: '12px', color: '#666' }}>1 (Good)</span>
+                            <input
+                                type="range"
+                                min="1"
+                                max="10"
+                                value={scores[q.id]}
+                                onChange={(e) => setScores({ ...scores, [q.id]: parseInt(e.target.value) })}
+                                style={{ flex: 1, accentColor: 'var(--brand-teal)', cursor: 'pointer' }}
+                            />
+                            <span style={{ fontSize: '12px', color: '#666' }}>10 (Bad)</span>
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px', fontSize: '11px', color: '#999' }}>
+                            {[...Array(10)].map((_, i) => <span key={i}>{i + 1}</span>)}
+                        </div>
+                    </div>
+                ))}
+
+                <button
+                    onClick={handleSubmit}
+                    className="btn btn-solid"
+                    style={{ width: '100%', padding: '15px', border: 'none', cursor: 'pointer', fontSize: '16px', marginTop: '10px' }}
+                >
+                    Submit Assessment
+                </button>
+            </div>
+        );
+    };
 
     // Simulate loading and auth check
     useEffect(() => {
@@ -308,8 +383,25 @@ const Dashboard = () => {
 
                 {activeTab === 'assessment' && (
                     <div className="dash-container animate-fade-in">
-                        <div style={{ background: '#fff', padding: '40px', borderRadius: '12px', textAlign: 'center' }}>
-                            <h3>No pending assignments</h3>
+                        <div style={{ background: '#fff', padding: '40px', borderRadius: '12px' }}>
+                            {assessmentSubmitted ? (
+                                <div style={{ textAlign: 'center', padding: '40px 20px' }}>
+                                    <div style={{ fontSize: '60px', marginBottom: '20px' }}>✅</div>
+                                    <h2 style={{ color: 'var(--brand-purple)', marginBottom: '15px' }}>Assessment Complete</h2>
+                                    <p style={{ fontSize: '18px', color: '#444', marginBottom: '30px' }}>
+                                        Thank you for checking in today. Your results have been logged and will be reviewed by your counselor before your next session.
+                                    </p>
+                                    <button
+                                        onClick={() => setActiveTab('resources')}
+                                        className="btn btn-solid"
+                                        style={{ padding: '12px 30px', border: 'none', cursor: 'pointer' }}
+                                    >
+                                        View Recommended Resources
+                                    </button>
+                                </div>
+                            ) : (
+                                <SelfAssessmentForm />
+                            )}
                         </div>
                     </div>
                 )}
