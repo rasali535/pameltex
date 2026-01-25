@@ -20,7 +20,7 @@ const IndividualTherapy = () => {
                         </p>
 
                         <div style={{ background: '#fff', padding: '30px', borderRadius: '8px', border: '1px solid #eee', marginBottom: '40px' }}>
-                            <h3 style={{ color: 'var(--accent-orange)', marginBottom: '15px' }}>Understanding Anxiety</h3>
+                            <h3 style={{ color: 'var(--brand-purple)', marginBottom: '15px' }}>Understanding Anxiety</h3>
                             <p>Anxiety is a feeling of fear, dread, and uneasiness. It might cause you to sweat, feel
                                 restless and tense, and have a rapid heartbeat. It can be a normal reaction to stress. For
                                 example, you might feel anxious when faced with a difficult problem at work, before taking a
@@ -33,22 +33,22 @@ const IndividualTherapy = () => {
                         <h3 style={{ color: 'var(--accent-purple)', marginBottom: '20px' }}>Our Therapeutic Approaches</h3>
                         <ul style={{ listStyle: 'none', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                             <li style={{ background: '#fff', padding: '20px', borderRadius: '6px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
-                                <strong style={{ color: 'var(--brand-green)' }}>Behavior Therapy</strong>
+                                <strong style={{ color: 'var(--brand-purple)' }}>Behavior Therapy</strong>
                                 <p style={{ fontSize: '14px', marginTop: '5px' }}>Focuses on the role of learning in developing
                                     both normal and abnormal behaviors.</p>
                             </li>
                             <li style={{ background: '#fff', padding: '20px', borderRadius: '6px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
-                                <strong style={{ color: 'var(--brand-green)' }}>Cognitive Therapy</strong>
+                                <strong style={{ color: 'var(--brand-teal)' }}>Cognitive Therapy</strong>
                                 <p style={{ fontSize: '14px', marginTop: '5px' }}>Focuses on what people think rather than what
                                     they do.</p>
                             </li>
                             <li style={{ background: '#fff', padding: '20px', borderRadius: '6px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
-                                <strong style={{ color: 'var(--brand-green)' }}>Humanistic Therapy</strong>
+                                <strong style={{ color: 'var(--brand-purple)' }}>Humanistic Therapy</strong>
                                 <p style={{ fontSize: '14px', marginTop: '5px' }}>Emphasizes people's capacity to make rational
                                     choices and develop to their maximum potential.</p>
                             </li>
                             <li style={{ background: '#fff', padding: '20px', borderRadius: '6px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
-                                <strong style={{ color: 'var(--brand-green)' }}>Psychoanalysis</strong>
+                                <strong style={{ color: 'var(--brand-teal)' }}>Psychoanalysis</strong>
                                 <p style={{ fontSize: '14px', marginTop: '5px' }}>Explores unconscious meanings and motivations.
                                 </p>
                             </li>

@@ -54,7 +54,7 @@ const ConsultancyServices = () => {
                     <p className="hero-subtitle" style={{ color: 'rgba(255,255,255,0.9)' }}>
                         Driving growth and excellence through strategic solutions.
                     </p>
-                    <Link to="/contact" className="btn btn-solid" style={{ backgroundColor: '#fff', color: 'var(--brand-green)', borderColor: '#fff' }}>
+                    <Link to="/contact" className="btn btn-solid" style={{ backgroundColor: '#fff', color: 'var(--brand-teal)', borderColor: '#fff' }}>
                         Get in Touch
                     </Link>
                 </div>
@@ -159,7 +159,7 @@ const ConsultancyServices = () => {
                                 <textarea id="quote-details" name="details" className="form-textarea" required placeholder="Briefly describe your requirements..." style={{ width: '100%', padding: '12px', border: '1px solid #ddd', borderRadius: '6px', height: '120px', resize: 'vertical' }}></textarea>
                             </div>
 
-                            <button type="submit" className="btn btn-solid" style={{ width: '100%', padding: '15px', fontSize: '16px', backgroundColor: 'var(--brand-green)', color: '#fff', border: 'none', borderRadius: '6px', cursor: 'pointer', transition: 'background 0.3s' }} onMouseOver={(e) => e.target.style.opacity = '0.9'} onMouseOut={(e) => e.target.style.opacity = '1'}>
+                            <button type="submit" className="btn btn-solid" style={{ width: '100%', padding: '15px', fontSize: '16px', backgroundColor: 'var(--brand-teal)', color: '#fff', border: 'none', borderRadius: '6px', cursor: 'pointer', transition: 'background 0.3s' }} onMouseOver={(e) => e.target.style.opacity = '0.9'} onMouseOut={(e) => e.target.style.opacity = '1'}>
                                 Request Quote
                             </button>
                         </form>
