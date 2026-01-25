@@ -71,7 +71,7 @@ const OurCompany = () => {
                         <div className="team-card-vertical"
                             style={{ background: 'white', overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column' }}>
                             <div className="team-img" style={{ height: '300px', background: '#e0f7fa', width: '100%' }}>
-                                <img src={thamuImg} alt="Thamu Gordon Mthupa" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                                <img src={thamuImg} alt="Thamu Gordon Mthupa" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} />
                             </div>
                             <div className="team-info" style={{ padding: '30px', flex: 1 }}>
                                 <h3 style={{ fontSize: '22px', color: 'var(--brand-purple)', marginBottom: '5px' }}>Thamu Gordon Mthupa</h3>
