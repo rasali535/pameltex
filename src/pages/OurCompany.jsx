@@ -84,7 +84,7 @@ const OurCompany = () => {
                         <div className="team-card-vertical"
                             style={{ background: 'white', overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column' }}>
                             <div className="team-img" style={{ height: '300px', background: '#f3e5f5', width: '100%' }}>
-                                <img src={alpheausImg} alt="Alpheaus Chiwaze" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                                <img src={alpheausImg} alt="Alpheaus Chiwaze" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center bottom' }} />
                             </div>
                             <div className="team-info" style={{ padding: '30px', flex: 1 }}>
                                 <h3 style={{ fontSize: '22px', color: 'var(--brand-purple)', marginBottom: '5px' }}>Alpheaus Chiwaze</h3>
