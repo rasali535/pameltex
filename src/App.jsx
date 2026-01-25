@@ -8,7 +8,7 @@ import OurCompany from './pages/OurCompany';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Login from './pages/Login';
-import GetStarted from './pages/GetStarted';
+
 import ConsultancyServices from './pages/ConsultancyServices';
 import NotFound from './pages/NotFound';
 import Dashboard from './pages/Dashboard';
@@ -28,7 +28,7 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/get-started" element={<GetStarted />} />
+
                     <Route path="/consultancy-services" element={<ConsultancyServices />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="*" element={<NotFound />} />
