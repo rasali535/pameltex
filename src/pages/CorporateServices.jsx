@@ -1,10 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import BookingModal from '../components/BookingModal';
-
 const CorporateServices = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
     return (
         <>
             <section className="business-hero">
@@ -67,24 +62,12 @@ const CorporateServices = () => {
                     <p style={{ marginBottom: '30px', fontSize: '18px' }}>Get in touch to discuss a tailored package for your organization.</p>
                     <button
                         onClick={() => {
-                            const isAuth = localStorage.getItem('pameltex_auth');
-                            if (!isAuth) {
-                                alert("Please sign in to book a consultation.");
-                                window.location.href = '/login';
-                                return;
-                            }
-                            setIsModalOpen(true);
+                            Calendly.initPopupWidget({ url: 'https://calendly.com/pameltex-info/30min' });
+                            return false;
                         }}
                         className="btn btn-solid" style={{ backgroundColor: 'var(--bg-dark)', borderColor: 'var(--bg-dark)', color: '#fff', padding: '15px 30px', border: 'none', cursor: 'pointer' }}>
                         Contact Us Today
                     </button>
-
-                    <BookingModal
-                        isOpen={isModalOpen}
-                        onClose={() => setIsModalOpen(false)}
-                        serviceType="Corporate Consultation"
-                        doctorName="Pameltex Team"
-                    />
                 </div>
             </section>
         </>

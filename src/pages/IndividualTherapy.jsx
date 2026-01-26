@@ -1,8 +1,4 @@
-import { useState } from 'react';
-import BookingModal from '../components/BookingModal';
-
 const IndividualTherapy = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
         <>
@@ -60,13 +56,9 @@ const IndividualTherapy = () => {
                         <div style={{ textAlign: 'center', marginTop: '50px' }}>
                             <button
                                 onClick={() => {
-                                    const isAuth = localStorage.getItem('pameltex_auth');
-                                    if (!isAuth) {
-                                        alert("Please sign in to book a consultation.");
-                                        window.location.href = '/login';
-                                        return;
-                                    }
-                                    setIsModalOpen(true);
+                                    // Calendly Popup
+                                    Calendly.initPopupWidget({ url: 'https://calendly.com/pameltex-info/30min' });
+                                    return false;
                                 }}
                                 className="btn btn-solid"
                                 style={{ padding: '15px 40px', fontSize: '18px', border: 'none' }}
@@ -74,13 +66,6 @@ const IndividualTherapy = () => {
                                 Schedule a Consultation
                             </button>
                         </div>
-
-                        <BookingModal
-                            isOpen={isModalOpen}
-                            onClose={() => setIsModalOpen(false)}
-                            serviceType="Individual Therapy"
-                            doctorName="Caroline Sithole"
-                        />
                     </div>
                 </div>
             </section>

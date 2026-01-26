@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import BookingModal from '../components/BookingModal';
+
 import bosswaLogo from '../assets/bosswa-logo.jpg';
 import letloleLogo from '../assets/client-letlole.png';
 import letshegoLogo from '../assets/client-letshego.png';
@@ -7,7 +6,6 @@ import unitransLogo from '../assets/client-unitrans.png';
 import thitmaLogo from '../assets/thitma-logo.jpg';
 
 const ConsultancyServices = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const services = [
         {
             title: "Business Advisory",
@@ -58,24 +56,12 @@ const ConsultancyServices = () => {
                     </p>
                     <button
                         onClick={() => {
-                            const isAuth = localStorage.getItem('pameltex_auth');
-                            if (!isAuth) {
-                                alert("Please sign in to make an inquiry.");
-                                window.location.href = '/login';
-                                return;
-                            }
-                            setIsModalOpen(true);
+                            Calendly.initPopupWidget({ url: 'https://calendly.com/pameltex-info/30min' });
+                            return false;
                         }}
                         className="btn btn-solid" style={{ backgroundColor: '#fff', color: 'var(--brand-teal)', borderColor: '#fff', padding: '12px 30px', border: 'none', cursor: 'pointer', fontWeight: 'bold' }}>
                         Get in Touch
                     </button>
-
-                    <BookingModal
-                        isOpen={isModalOpen}
-                        onClose={() => setIsModalOpen(false)}
-                        serviceType="Business Consultancy"
-                        doctorName="Consultancy Team"
-                    />
                 </div>
             </section>
 
@@ -141,21 +127,39 @@ const ConsultancyServices = () => {
                     </div>
 
                     <div style={{ background: '#f9f9f9', padding: '40px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-                        <form onSubmit={(e) => {
+                        <form onSubmit={async (e) => {
                             e.preventDefault();
+                            const btn = e.target.querySelector('button[type="submit"]');
+                            const originalText = btn.innerText;
+                            btn.innerText = 'Sending...';
+                            btn.disabled = true;
+
                             const formData = new FormData(e.target);
-                            const name = formData.get('name');
-                            const company = formData.get('company');
-                            const service = formData.get('service');
-                            const details = formData.get('details');
 
-                            const subject = `Consultancy Quote Request: ${service}`;
-                            const body = `Name: ${name}\nCompany: ${company}\nService: ${service}\n\nProject Details:\n${details}`;
+                            try {
+                                const response = await fetch('send_mail.php', {
+                                    method: 'POST',
+                                    body: formData
+                                });
 
-                            window.open(`mailto:info@pameltex.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
-
-                            alert("Opening your email client to send the quote request...");
-                            e.target.reset();
+                                if (response.ok) {
+                                    alert('Thank you! Your quote request has been sent successfully.');
+                                    e.target.reset();
+                                } else {
+                                    throw new Error('Server responded with error');
+                                }
+                            } catch (error) {
+                                console.error('Email error:', error);
+                                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                                    alert('(Demo Mode) Message "sent" successfully!\n(Note: A live PHP server is required for real email delivery)');
+                                    e.target.reset();
+                                } else {
+                                    alert('We encountered an error sending your request. Please try again later or email us directly at info@pameltex.com');
+                                }
+                            } finally {
+                                btn.innerText = originalText;
+                                btn.disabled = false;
+                            }
                         }}>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                                 <div className="form-group">
