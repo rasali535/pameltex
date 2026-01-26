@@ -1,6 +1,13 @@
+import SEO from '../components/SEO';
+
 const FAQ = () => {
     return (
         <>
+            <SEO
+                title="FAQ"
+                description="Commonly asked questions about our counseling and psychosocial services in Botswana. Learn about our counselors, confidentiality, and pricing."
+                keywords="FAQ Pameltex, counseling questions Botswana, mental health services info, therapy confidentiality Gaborone"
+            />
             <section className="hero page-hero" style={{ padding: '60px 0', background: 'var(--bg-dark)' }}>
                 <div className="container">
                     <h1 className="hero-title" style={{ fontSize: '36px' }}>Frequently Asked Questions</h1>

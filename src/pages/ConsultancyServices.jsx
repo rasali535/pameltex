@@ -4,6 +4,7 @@ import letloleLogo from '../assets/client-letlole.png';
 import letshegoLogo from '../assets/client-letshego.png';
 import unitransLogo from '../assets/client-unitrans.png';
 import thitmaLogo from '../assets/thitma-logo.jpg';
+import SEO from '../components/SEO';
 
 const ConsultancyServices = () => {
     const services = [
@@ -46,6 +47,25 @@ const ConsultancyServices = () => {
 
     return (
         <>
+            <SEO
+                title="Consultancy Services"
+                description="Expert business consultancy in Botswana. Specializing in business advisory, planning, strategy, corporate governance, and employee assistance programs."
+                keywords="business consultancy Botswana, strategic planning Gaborone, corporate governance advisory, business plans Botswana, EAP programs"
+            >
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": "Business Consultancy",
+                        "provider": {
+                            "@type": "LocalBusiness",
+                            "name": "Pameltex Psychosocial & Counseling"
+                        },
+                        "areaServed": "Botswana",
+                        "description": "Expert business consultancy specializing in advisory, planning, strategy, and corporate governance."
+                    })}
+                </script>
+            </SEO>
             <section className="business-hero" style={{ background: 'linear-gradient(rgba(50, 80, 60, 0.9), rgba(50, 80, 60, 0.8)), url(https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80) no-repeat center center/cover' }}>
                 <div className="container">
                     <h1 className="hero-title" style={{ fontSize: '42px', maxWidth: '800px', margin: '0 auto 20px' }}>

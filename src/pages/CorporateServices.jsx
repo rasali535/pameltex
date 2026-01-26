@@ -1,7 +1,28 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+
 const CorporateServices = () => {
     return (
         <>
+            <SEO
+                title="Corporate Wellness & Services"
+                description="Comprehensive mental health benefits for your workforce. Support your employees with professional therapy, workshops, and wellness programs in Botswana."
+                keywords="corporate wellness, employee mental health, workplace counseling Botswana, organizational wellness, stress management workshops"
+            >
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": "Corporate Wellness Programs",
+                        "provider": {
+                            "@type": "MedicalBusiness",
+                            "name": "Pameltex Psychosocial & Counseling"
+                        },
+                        "areaServed": "Botswana",
+                        "description": "Comprehensive mental health benefits for your workforce including organization-wide wellness, confidentiality, and workshops."
+                    })}
+                </script>
+            </SEO>
             <section className="business-hero">
                 <div className="container">
                     <h1 className="hero-title" style={{ fontSize: '42px', maxWidth: '800px', margin: '0 auto 20px' }}>

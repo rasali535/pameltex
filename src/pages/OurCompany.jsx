@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import profileImg from '../assets/profile-placeholder.png';
 import alpheausImg from '../assets/alpheaus.jpg';
 import thamuImg from '../assets/thamu.jpg';
@@ -6,6 +7,35 @@ import carolineImg from '../assets/caroline.jpg';
 const OurCompany = () => {
     return (
         <>
+            <SEO
+                title="About Us"
+                description="Learn about Pameltex Psychosocial & Counseling, a leading provider of psychosocial services in Botswana. Meet our professional team of certified counselors."
+                keywords="about Pameltex, counseling services Botswana, mental health professionals Gaborone, psychosocial support team"
+            >
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "AboutPage",
+                        "mainEntity": {
+                            "@type": "Organization",
+                            "name": "Pameltex Psychosocial & Counseling",
+                            "employee": [
+                                {
+                                    "@type": "Person",
+                                    "name": "Caroline Sithole",
+                                    "jobTitle": "Principal Counsellor",
+                                    "description": "Board-certified counsellor majoring in Cognitive Behavioral Therapy (CBT)."
+                                },
+                                {
+                                    "@type": "Person",
+                                    "name": "Thamu X Gordon Mthupa",
+                                    "jobTitle": "Lead Counselor"
+                                }
+                            ]
+                        }
+                    })}
+                </script>
+            </SEO>
             <section className="hero page-hero" style={{ padding: '60px 0', background: 'var(--bg-dark)' }}>
                 <div className="container">
                     <h1 className="hero-title" style={{ fontSize: '36px' }}>Our Company</h1>

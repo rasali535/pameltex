@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SEO from '../components/SEO';
 
 const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,6 +37,11 @@ const Contact = () => {
 
     return (
         <>
+            <SEO
+                title="Contact Us"
+                description="Get in touch with Pameltex Psychosocial & Counseling. Book an online or in-person consultation in Gaborone, Botswana."
+                keywords="contact Pameltex, book therapy session Gaborone, mental health consultation Botswana, counseling contact"
+            />
             <section className="hero page-hero" style={{ padding: '60px 0', background: 'var(--bg-dark)' }}>
                 <div className="container">
                     <h1 className="hero-title" style={{ fontSize: '36px' }}>Contact Us</h1>

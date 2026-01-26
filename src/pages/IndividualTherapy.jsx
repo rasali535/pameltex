@@ -1,7 +1,28 @@
+import SEO from '../components/SEO';
+
 const IndividualTherapy = () => {
 
     return (
         <>
+            <SEO
+                title="Individual Therapy"
+                description="Professional individual therapy services for anxiety, stress, depression, and personal growth. Specialized approaches including Behavior, Cognitive, and Humanistic therapy."
+                keywords="individual therapy, anxiety treatment, stress management, depression counseling, Gaborone therapy, Botswana counseling"
+            >
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": "Individual Therapy",
+                        "provider": {
+                            "@type": "MedicalBusiness",
+                            "name": "Pameltex Psychosocial & Counseling"
+                        },
+                        "areaServed": "Botswana",
+                        "description": "Personalized care for anxiety, stress, depression, and personal growth."
+                    })}
+                </script>
+            </SEO>
             <section className="hero page-hero" style={{ padding: '60px 0', background: 'var(--bg-dark)' }}>
                 <div className="container">
                     <h1 className="hero-title" style={{ fontSize: '36px' }}>Individual Therapy</h1>

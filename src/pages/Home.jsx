@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import clientLetlole from '../assets/client-letlole.png';
 import clientLetshego from '../assets/client-letshego.png';
 import clientUnitrans from '../assets/client-unitrans.png';
@@ -6,6 +7,48 @@ import clientUnitrans from '../assets/client-unitrans.png';
 const Home = () => {
     return (
         <>
+            <SEO
+                title="Home"
+                description="Pameltex Psychosocial & Counseling offers professional mental health services, individual therapy, and corporate wellness programs in Gaborone, Botswana."
+            >
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "MedicalBusiness",
+                        "name": "Pameltex Psychosocial & Counseling",
+                        "image": "https://www.pameltex.com/assets/logo.png",
+                        "@id": "https://www.pameltex.com",
+                        "url": "https://www.pameltex.com",
+                        "telephone": "+26771234567",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Gaborone",
+                            "addressLocality": "Gaborone",
+                            "addressCountry": "BW"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": -24.6282,
+                            "longitude": 25.9231
+                        },
+                        "openingHoursSpecification": {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": [
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Friday"
+                            ],
+                            "opens": "08:00",
+                            "closes": "17:00"
+                        },
+                        "sameAs": [
+                            "https://www.facebook.com/pameltex"
+                        ]
+                    })}
+                </script>
+            </SEO>
 
 
             <section className="hero">
