@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import logo from '../assets/logo.png';
+import logo from '../assets/pameltex-group-logo.png';
+
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

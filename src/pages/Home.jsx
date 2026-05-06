@@ -4,193 +4,123 @@ import clientLetlole from '../assets/client-letlole.png';
 import clientLetshego from '../assets/client-letshego.png';
 import clientUnitrans from '../assets/client-unitrans.png';
 import foundationsLogo from '../assets/foundations-logo.png';
+import groupLogo from '../assets/pameltex-group-logo.png';
 
 const Home = () => {
     return (
         <>
             <SEO
-                title="Mental Health & Counselling Services in Botswana | Pameltex"
-                description="Pameltex offers professional mental health services, counselling, and psychosocial support in Botswana. Individual therapy & corporate wellness programs available."
-            >
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "MedicalBusiness",
-                        "name": "Pameltex Psychosocial & Counseling",
-                        "image": "https://www.pameltex.com/assets/logo.png",
-                        "@id": "https://www.pameltex.com",
-                        "url": "https://www.pameltex.com",
-                        "telephone": "+26771234567",
-                        "address": {
-                            "@type": "PostalAddress",
-                            "streetAddress": "Gaborone",
-                            "addressLocality": "Gaborone",
-                            "addressCountry": "BW"
-                        },
-                        "geo": {
-                            "@type": "GeoCoordinates",
-                            "latitude": -24.6282,
-                            "longitude": 25.9231
-                        },
-                        "openingHoursSpecification": {
-                            "@type": "OpeningHoursSpecification",
-                            "dayOfWeek": [
-                                "Monday",
-                                "Tuesday",
-                                "Wednesday",
-                                "Thursday",
-                                "Friday"
-                            ],
-                            "opens": "08:00",
-                            "closes": "17:00"
-                        },
-                        "sameAs": [
-                            "https://www.facebook.com/pameltex"
-                        ]
-                    })}
-                </script>
-            </SEO>
+                title="Pameltex Group | Driven for Impact"
+                description="Pameltex Group houses Pameltex Psychosocial & Counseling, Pameltex Tech, and Foundations Counseling Academy. Driven for global impact in mental health and innovation."
+            />
 
             {/* Hero Section */}
-            <section className="hero" style={{ padding: '100px 0', background: 'var(--brand-purple)', color: 'white' }}>
-                <div className="container hero-container">
-                    <h1 className="hero-title" style={{ fontSize: '3.5rem', marginBottom: '1.5rem', lineHeight: '1.2' }}>
-                        Professional Support for Your Mental Well-being.
-                    </h1>
-                    <p className="hero-subtitle" style={{ fontSize: '1.4rem', marginBottom: '3rem', opacity: 0.9 }}>
-                        Empowering you to navigate life's challenges with professional guidance and care.
+            <section className="hero" style={{ padding: '120px 0', background: 'linear-gradient(135deg, #1a1a1a 0%, var(--brand-purple) 100%)', color: 'white', textAlign: 'center' }}>
+                <div className="container">
+                    <img src={groupLogo} alt="Pameltex Group" style={{ maxWidth: '350px', marginBottom: '40px', filter: 'brightness(0) invert(1)' }} />
+                    <h1 style={{ fontSize: '3.8rem', fontWeight: '800', marginBottom: '20px', letterSpacing: '-1px' }}>Driven for Impact.</h1>
+                    <p style={{ fontSize: '1.5rem', opacity: 0.9, maxWidth: '800px', margin: '0 auto 50px', lineHeight: '1.4' }}>
+                        A multi-disciplinary group committed to transforming lives through mental health services, 
+                        innovative technology, and specialized education.
                     </p>
-                    <div className="therapy-cards" style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <Link to="/individual-therapy" className="card" style={{ background: 'white', color: 'var(--text-dark)', padding: '30px', borderRadius: '12px', width: '300px', textAlign: 'left' }}>
-                            <span className="card-label" style={{ display: 'block', fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--brand-purple)' }}>Individual</span>
-                            <span className="card-sub" style={{ color: '#666' }}>Personalized therapy for yourself</span>
-                            <div className="card-arrow" style={{ marginTop: '20px', fontSize: '1.5rem', color: 'var(--brand-teal)' }}>&rarr;</div>
-                        </Link>
-                        <Link to="/corporate-services" className="card" style={{ background: 'white', color: 'var(--text-dark)', padding: '30px', borderRadius: '12px', width: '300px', textAlign: 'left' }}>
-                            <span className="card-label" style={{ display: 'block', fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--brand-green)' }}>Corporate</span>
-                            <span className="card-sub" style={{ color: '#666' }}>Wellness programs for your team</span>
-                            <div className="card-arrow" style={{ marginTop: '20px', fontSize: '1.5rem', color: 'var(--brand-teal)' }}>&rarr;</div>
-                        </Link>
+                    <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+                         <a href="#ecosystem" className="btn-solid" style={{ background: 'var(--brand-teal)', padding: '18px 40px', borderRadius: '50px', fontSize: '1.1rem' }}>Explore Our Ecosystem</a>
                     </div>
                 </div>
             </section>
 
-            {/* NEW PROMINENT: Academy Foundations Section */}
-            <section className="academy-hero-cta" style={{ padding: '80px 0', background: '#fdfbf7' }}>
+            {/* The Ecosystem Section */}
+            <section id="ecosystem" style={{ padding: '100px 0', background: '#fdfbf7' }}>
                 <div className="container">
-                    <div className="academy-wrapper" style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        gap: '60px', 
-                        background: 'white', 
-                        padding: '60px', 
-                        borderRadius: '30px', 
-                        boxShadow: '0 20px 50px rgba(0,0,0,0.05)',
-                        border: '1px solid #eee'
-                    }}>
-                        <div className="academy-img-box" style={{ flex: '1', textAlign: 'center' }}>
-                            <img src={foundationsLogo} alt="Foundations Counseling Academy" style={{ maxWidth: '300px', height: 'auto' }} />
-                        </div>
-                        <div className="academy-text-box" style={{ flex: '1.5' }}>
-                            <h2 style={{ fontSize: '2.5rem', color: 'var(--brand-purple)', marginBottom: '20px' }}>Foundations Counseling Academy</h2>
-                            <p style={{ fontSize: '1.2rem', color: '#555', marginBottom: '30px', lineHeight: '1.6' }}>
-                                Unlock your potential with our world-class mental health training and personal development courses. 
-                                Join thousands of learners building stronger emotional foundations.
+                    <h2 style={{ textAlign: 'center', fontSize: '3rem', color: 'var(--brand-purple)', marginBottom: '15px', fontWeight: '800' }}>One Group. Three Pillars.</h2>
+                    <p style={{ textAlign: 'center', fontSize: '1.2rem', color: '#666', marginBottom: '70px', maxWidth: '700px', margin: '0 auto 70px' }}>
+                        Pameltex Group integrates specialized mental health care with cutting-edge technology and academic excellence.
+                    </p>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
+                        
+                        {/* Pillar 1: Psychosocial & Counseling */}
+                        <div className="pillar-card" style={{ background: 'white', padding: '50px 40px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid #eee', transition: 'all 0.3s ease' }}>
+                            <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🧠</div>
+                            <h3 style={{ fontSize: '1.8rem', color: 'var(--brand-purple)', marginBottom: '15px' }}>Pameltex Psychosocial & Counseling</h3>
+                            <p style={{ color: '#555', marginBottom: '25px', lineHeight: '1.6' }}>
+                                Professional mental health services, individual therapy, and corporate wellness programs 
+                                delivered by certified specialists.
                             </p>
-                            <a href="https://academyfoundations.com/" target="_blank" rel="noopener noreferrer" 
-                               className="btn-solid" 
-                               style={{ 
-                                   display: 'inline-block', 
-                                   padding: '18px 40px', 
-                                   background: 'var(--brand-teal)', 
-                                   color: 'white', 
-                                   borderRadius: '50px', 
-                                   fontSize: '1.1rem', 
-                                   fontWeight: 'bold',
-                                   boxShadow: '0 10px 20px rgba(42, 157, 143, 0.2)'
-                               }}>
-                                Visit the Academy &rarr;
-                            </a>
+                            <Link to="/individual-therapy" style={{ color: 'var(--brand-teal)', fontWeight: '700', textDecoration: 'underline' }}>View Services &rarr;</Link>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            {/* Stats Bar */}
-            <section className="stats-bar" style={{ padding: '40px 0', background: 'white', borderBottom: '1px solid #eee' }}>
-                <div className="container">
-                    <div className="stats-grid" style={{ display: 'flex', justifyContent: 'space-around', textAlign: 'center' }}>
-                        <div className="stat-item">
-                            <strong style={{ display: 'block', fontSize: '2rem', color: 'var(--brand-green)' }}>International</strong>
-                            <span style={{ fontSize: '0.9rem', color: '#888', fontWeight: 'bold' }}>ACCEPTED STANDARDS</span>
+                        {/* Pillar 2: Tech */}
+                        <div className="pillar-card" style={{ background: 'white', padding: '50px 40px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid #eee', borderTop: '6px solid var(--brand-teal)' }}>
+                            <div style={{ fontSize: '3rem', marginBottom: '20px' }}>💻</div>
+                            <h3 style={{ fontSize: '1.8rem', color: 'var(--brand-teal)', marginBottom: '15px' }}>Pameltex Tech</h3>
+                            <p style={{ color: '#555', marginBottom: '25px', lineHeight: '1.6' }}>
+                                Driving digital transformation in the healthcare space through innovative platforms, 
+                                AI-driven insights, and tech-enabled support systems.
+                            </p>
+                            <span style={{ color: '#999', fontSize: '0.9rem', fontWeight: '600' }}>Innovation for Global Impact</span>
                         </div>
-                        <div className="stat-item">
-                            <strong style={{ display: 'block', fontSize: '2rem', color: 'var(--brand-green)' }}>Certified</strong>
-                            <span style={{ fontSize: '0.9rem', color: '#888', fontWeight: 'bold' }}>PROFESSIONAL COUNSELORS</span>
-                        </div>
-                        <div className="stat-item">
-                            <strong style={{ display: 'block', fontSize: '2rem', color: 'var(--brand-green)' }}>Accessible</strong>
-                            <span style={{ fontSize: '0.9rem', color: '#888', fontWeight: 'bold' }}>ONLINE & IN-PERSON</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            {/* How It Works */}
-            <section className="process-section" style={{ padding: '80px 0', background: 'white' }}>
-                <div className="container">
-                    <h2 className="section-title" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '50px' }}>How It Works</h2>
-                    <div className="process-steps" style={{ display: 'flex', gap: '40px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        {[
-                            { num: 1, title: 'Get Matched', desc: 'Find the right therapist for your specific needs.' },
-                            { num: 2, title: 'Communicate', desc: 'Connect via text, chat, phone, or video.' },
-                            { num: 3, title: 'Start Therapy', desc: 'Begin your journey with professional support.' }
-                        ].map((step, i) => (
-                            <div key={i} className="step" style={{ flex: '1', minWidth: '250px', textAlign: 'center' }}>
-                                <div className="step-circle" style={{ 
-                                    width: '60px', height: '60px', background: 'var(--brand-light)', color: 'var(--brand-green)', 
-                                    borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', 
-                                    fontSize: '1.5rem', fontWeight: 'bold', margin: '0 auto 20px' 
-                                }}>{step.num}</div>
-                                <h3 style={{ marginBottom: '10px' }}>{step.title}</h3>
-                                <p style={{ color: '#666' }}>{step.desc}</p>
+                        {/* Pillar 3: Academy */}
+                        <div className="pillar-card" style={{ background: 'white', padding: '50px 40px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid #eee' }}>
+                            <div style={{ marginBottom: '20px' }}>
+                                <img src={foundationsLogo} alt="Foundations Academy" style={{ height: '60px' }} />
                             </div>
-                        ))}
+                            <h3 style={{ fontSize: '1.8rem', color: '#1a1a1a', marginBottom: '15px' }}>Foundations Counseling Academy</h3>
+                            <p style={{ color: '#555', marginBottom: '25px', lineHeight: '1.6' }}>
+                                A premier learning institution providing specialized mental health courses, 
+                                professional training, and foundational wellness education.
+                            </p>
+                            <a href="https://academyfoundations.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-purple)', fontWeight: '700', textDecoration: 'underline' }}>Visit Academy &rarr;</a>
+                        </div>
+
                     </div>
                 </div>
             </section>
 
-            {/* Clients Section */}
-            <section className="clients-section" style={{ padding: '80px 0', background: '#f9f9f9' }}>
+            {/* Impact Section */}
+            <section style={{ padding: '80px 0', background: 'var(--brand-purple)', color: 'white', textAlign: 'center' }}>
+                <div className="container">
+                    <h2 style={{ fontSize: '2.5rem', marginBottom: '30px' }}>Our Mission is Impact.</h2>
+                    <p style={{ fontSize: '1.3rem', opacity: 0.9, maxWidth: '800px', margin: '0 auto 40px', lineHeight: '1.6' }}>
+                        By bridging the gap between human empathy, technological innovation, and academic rigor, 
+                        we are creating a future where mental well-being is accessible to all.
+                    </p>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap' }}>
+                        <div style={{ textAlign: 'center' }}>
+                            <strong style={{ fontSize: '3rem', display: 'block' }}>10k+</strong>
+                            <span style={{ fontSize: '1rem', opacity: 0.8 }}>Lives Impacted</span>
+                        </div>
+                        <div style={{ textAlign: 'center' }}>
+                            <strong style={{ fontSize: '3rem', display: 'block' }}>50+</strong>
+                            <span style={{ fontSize: '1rem', opacity: 0.8 }}>Corporate Partners</span>
+                        </div>
+                        <div style={{ textAlign: 'center' }}>
+                            <strong style={{ fontSize: '3rem', display: 'block' }}>Global</strong>
+                            <span style={{ fontSize: '1rem', opacity: 0.8 }}>Standards of Care</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Trusted By */}
+            <section style={{ padding: '60px 0', background: 'white' }}>
                 <div className="container" style={{ textAlign: 'center' }}>
-                    <h2 className="section-title" style={{ fontSize: '1.5rem', opacity: 0.5, marginBottom: '40px' }}>TRUSTED BY LEADING ORGANIZATIONS</h2>
-                    <div className="clients-grid" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '60px', flexWrap: 'wrap' }}>
-                        <img src={clientLetlole} alt="Letlole La Rona" style={{ height: '50px', filter: 'grayscale(100%)', opacity: 0.7 }} />
-                        <img src={clientUnitrans} alt="Unitrans Botswana" style={{ height: '40px', filter: 'grayscale(100%)', opacity: 0.7 }} />
-                        <img src={clientLetshego} alt="Letshego" style={{ height: '40px', filter: 'grayscale(100%)', opacity: 0.7 }} />
+                    <h4 style={{ color: '#999', marginBottom: '40px', letterSpacing: '2px' }}>TRUSTED BY LEADING ORGANIZATIONS</h4>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '60px', flexWrap: 'wrap' }}>
+                        <img src={clientLetlole} alt="Letlole" style={{ height: '45px', filter: 'grayscale(100%)', opacity: 0.6 }} />
+                        <img src={clientUnitrans} alt="Unitrans" style={{ height: '35px', filter: 'grayscale(100%)', opacity: 0.6 }} />
+                        <img src={clientLetshego} alt="Letshego" style={{ height: '35px', filter: 'grayscale(100%)', opacity: 0.6 }} />
                     </div>
                 </div>
             </section>
 
-            {/* Testimonials */}
-            <section className="testimonials" style={{ padding: '80px 0', background: 'white' }}>
+            {/* CTA */}
+            <section style={{ padding: '100px 0', background: '#fdfbf7', textAlign: 'center' }}>
                 <div className="container">
-                    <h2 className="section-title" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '50px' }}>Voices of Hope</h2>
-                    <div className="testimonial-grid" style={{ display: 'flex', gap: '30px', overflowX: 'auto', paddingBottom: '20px' }}>
-                        {[
-                            { text: '"Pameltex has completely changed my view on therapy. Highly recommended."', author: 'Sarah K., Gaborone' },
-                            { text: '"Professional, compassionate, and accessible. The best support I\'ve had."', author: 'Michael T.' },
-                            { text: '"Their corporate program transformed our office culture and communication."', author: 'Letlole La Rona, CEO' }
-                        ].map((t, i) => (
-                            <div key={i} className="testimonial-card" style={{ 
-                                background: '#fdfbf7', padding: '40px', borderRadius: '15px', minWidth: '300px', flex: '1',
-                                borderTop: '5px solid var(--brand-purple)'
-                            }}>
-                                <p style={{ fontStyle: 'italic', marginBottom: '20px', color: '#444' }}>{t.text}</p>
-                                <strong style={{ color: 'var(--brand-purple)' }}>{t.author}</strong>
-                            </div>
-                        ))}
-                    </div>
+                    <h2 style={{ fontSize: '2.8rem', color: 'var(--brand-purple)', marginBottom: '20px' }}>Ready to make an impact?</h2>
+                    <p style={{ fontSize: '1.2rem', color: '#666', marginBottom: '40px' }}>Whether you are an individual seeking support, a business looking to innovate, or a student ready to learn.</p>
+                    <Link to="/contact" className="btn-solid" style={{ background: 'var(--brand-purple)', padding: '18px 50px', borderRadius: '50px', fontSize: '1.1rem', color: 'white' }}>Get in Touch</Link>
                 </div>
             </section>
         </>
