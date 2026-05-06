@@ -3,6 +3,9 @@ import SEO from '../components/SEO';
 import clientLetlole from '../assets/client-letlole.png';
 import clientLetshego from '../assets/client-letshego.png';
 import clientUnitrans from '../assets/client-unitrans.png';
+import foundationsLogo from '../assets/foundations-logo.png';
+
+
 
 const Home = () => {
     return (
@@ -131,6 +134,29 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* NEW: Academy Foundations Section */}
+            <section className="academy-cta-section">
+                <div className="container">
+                    <div className="academy-content-wrapper">
+                        <div className="academy-image-container">
+                            <img src={foundationsLogo} alt="Foundations Counselling" className="academy-logo-img" />
+                        </div>
+
+                        <div className="academy-text-container">
+                            <h2 className="academy-title">Academy Foundations</h2>
+                            <p className="academy-description">
+                                Take the next step in your mental health journey. Explore our specialized courses, 
+                                workshops, and resources designed to empower you with lasting foundations for well-being.
+                            </p>
+                            <a href="https://academyfoundations.com/" target="_blank" rel="noopener noreferrer" className="btn btn-solid academy-btn" id="academy-visit-btn">
+                                Visit the Academy &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             <section className="value-props">
                 <div className="container">

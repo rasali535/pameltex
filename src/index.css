@@ -1423,3 +1423,76 @@ a {
         font-size: 28px;
     }
 }
+
+/* Academy Foundations Section */
+.academy-cta-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.academy-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5f0e6 100%);
+    border-radius: 24px;
+    padding: 60px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid rgba(107, 76, 154, 0.1);
+}
+
+.academy-image-container {
+    flex: 1;
+}
+
+.academy-logo-img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.academy-logo-img:hover {
+    transform: scale(1.05);
+}
+
+.academy-text-container {
+    flex: 1;
+}
+
+.academy-title {
+    font-size: 36px;
+    color: var(--brand-purple);
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.academy-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.academy-btn {
+    display: inline-block;
+    padding: 14px 32px !important;
+    font-size: 16px !important;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+@media (max-width: 992px) {
+    .academy-content-wrapper {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .academy-title {
+        font-size: 28px;
+    }
+}
