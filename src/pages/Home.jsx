@@ -62,7 +62,7 @@ const Home = () => {
                                 Driving digital transformation in the healthcare space through innovative platforms, 
                                 AI-driven insights, and tech-enabled support systems.
                             </p>
-                            <span style={{ color: '#999', fontSize: '0.9rem', fontWeight: '600' }}>Leading Innovation for Global Impact</span>
+                            <a href="https://tech.pameltex.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8B1A3D', fontWeight: '700', textDecoration: 'underline', display: 'block', marginTop: '10px' }}>Visit Pameltex Tech &rarr;</a>
                         </div>
 
 
