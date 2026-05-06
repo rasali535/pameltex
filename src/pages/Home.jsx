@@ -83,37 +83,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Pameltex Tech Feature Section */}
-            <section style={{ padding: '100px 0', background: '#111', color: 'white' }}>
-                <div className="container">
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '80px', flexWrap: 'wrap' }}>
-                        <div style={{ flex: '1', minWidth: '300px' }}>
-                            <div style={{ background: 'white', padding: '40px', borderRadius: '30px' }}>
-                                <img src={techLogo} alt="Pameltex Tech Innovation" style={{ maxWidth: '100%', height: 'auto' }} />
-                            </div>
-                        </div>
-                        <div style={{ flex: '1.2', minWidth: '350px' }}>
-                            <h2 style={{ fontSize: '3rem', color: '#8B1A3D', marginBottom: '30px', fontWeight: '800' }}>Leading Innovation in HealthTech</h2>
-                            <p style={{ fontSize: '1.25rem', lineHeight: '1.7', color: '#ccc', marginBottom: '40px' }}>
-                                Pameltex Tech is the innovation engine of the Pameltex Group. We are dedicated to building 
-                                the next generation of digital infrastructure for the healthcare industry, ensuring that 
-                                professional support is always just a click away.
-                            </p>
-                            
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px' }}>
-                                <div>
-                                    <h4 style={{ color: '#8B1A3D', fontSize: '1.2rem', marginBottom: '10px' }}>AI-Driven Insights</h4>
-                                    <p style={{ color: '#888', fontSize: '0.95rem' }}>Leveraging artificial intelligence to provide personalized wellness recommendations and early intervention signals.</p>
-                                </div>
-                                <div>
-                                    <h4 style={{ color: '#8B1A3D', fontSize: '1.2rem', marginBottom: '10px' }}>Global Connectivity</h4>
-                                    <p style={{ color: '#888', fontSize: '0.95rem' }}>Developing low-latency telehealth platforms that connect specialists with patients across borders seamlessly.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
 
 
             {/* Impact Section */}
