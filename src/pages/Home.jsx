@@ -5,6 +5,8 @@ import clientLetshego from '../assets/client-letshego.png';
 import clientUnitrans from '../assets/client-unitrans.png';
 import foundationsLogo from '../assets/foundations-logo.png';
 import groupLogo from '../assets/pameltex-group-logo.png';
+import techLogo from '../assets/pameltex-tech-logo.png';
+
 
 const Home = () => {
     return (
@@ -51,15 +53,18 @@ const Home = () => {
                         </div>
 
                         {/* Pillar 2: Tech */}
-                        <div className="pillar-card" style={{ background: 'white', padding: '50px 40px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid #eee', borderTop: '6px solid var(--brand-teal)' }}>
-                            <div style={{ fontSize: '3rem', marginBottom: '20px' }}>💻</div>
-                            <h3 style={{ fontSize: '1.8rem', color: 'var(--brand-teal)', marginBottom: '15px' }}>Pameltex Tech</h3>
+                        <div className="pillar-card" style={{ background: 'white', padding: '50px 40px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid #eee', borderTop: '6px solid #8B1A3D' }}>
+                            <div style={{ marginBottom: '20px' }}>
+                                <img src={techLogo} alt="Pameltex Tech" style={{ height: '70px' }} />
+                            </div>
+                            <h3 style={{ fontSize: '1.8rem', color: '#8B1A3D', marginBottom: '15px' }}>Pameltex Tech</h3>
                             <p style={{ color: '#555', marginBottom: '25px', lineHeight: '1.6' }}>
                                 Driving digital transformation in the healthcare space through innovative platforms, 
                                 AI-driven insights, and tech-enabled support systems.
                             </p>
-                            <span style={{ color: '#999', fontSize: '0.9rem', fontWeight: '600' }}>Innovation for Global Impact</span>
+                            <span style={{ color: '#999', fontSize: '0.9rem', fontWeight: '600' }}>Leading Innovation for Global Impact</span>
                         </div>
+
 
                         {/* Pillar 3: Academy */}
                         <div className="pillar-card" style={{ background: 'white', padding: '50px 40px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid #eee' }}>
