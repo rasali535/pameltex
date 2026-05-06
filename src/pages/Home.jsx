@@ -5,13 +5,11 @@ import clientLetshego from '../assets/client-letshego.png';
 import clientUnitrans from '../assets/client-unitrans.png';
 import foundationsLogo from '../assets/foundations-logo.png';
 
-
-
 const Home = () => {
     return (
         <>
             <SEO
-                title="Mental Health & Counselling Services in Botswana"
+                title="Mental Health & Counselling Services in Botswana | Pameltex"
                 description="Pameltex offers professional mental health services, counselling, and psychosocial support in Botswana. Individual therapy & corporate wellness programs available."
             >
                 <script type="application/ld+json">
@@ -53,103 +51,64 @@ const Home = () => {
                 </script>
             </SEO>
 
-
-            <section className="hero">
+            {/* Hero Section */}
+            <section className="hero" style={{ padding: '100px 0', background: 'var(--brand-purple)', color: 'white' }}>
                 <div className="container hero-container">
-                    <h1 className="hero-title">Professional Counselling & Psychosocial Support to Prioritise Your Mental Health.</h1>
-                    <p className="hero-subtitle">What type of therapy are you looking for?</p>
-                    <div className="therapy-cards">
-                        <Link to="/individual-therapy" className="card">
-                            <span className="card-label">Individual</span>
-                            <span className="card-sub">(For myself)</span>
-                            <div className="card-arrow">&rarr;</div>
-                        </Link>
-                        <Link to="/contact" className="card">
-                            <span className="card-label">Couples</span>
-                            <span className="card-sub">(For me and my partner)</span>
-                            <div className="card-arrow">&rarr;</div>
-                        </Link>
-                        <Link to="/corporate-services" className="card">
-                            <span className="card-label">Corporate</span>
-                            <span className="card-sub">(Wellness & Workshops)</span>
-                            <div className="card-arrow">&rarr;</div>
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            <section className="stats-bar">
-                <div className="container">
-                    <div className="stats-grid">
-                        <div className="stat-item">
-                            <strong>International</strong>
-                            <span>Accepted Standards</span>
-                        </div>
-                        <div className="stat-item">
-                            <strong>Certified</strong>
-                            <span>Professional Counselors</span>
-                        </div>
-                        <div className="stat-item">
-                            <strong>Accessible</strong>
-                            <span>Online & In-Person</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="intro-text-section" style={{ padding: '40px 0', textAlign: 'center', backgroundColor: '#f9f9f9' }}>
-                <div className="container">
-                    <p style={{ fontSize: '1.2rem', color: '#555', marginBottom: '15px' }}>
-                        The <a href="https://www.who.int/health-topics/mental-health" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-teal)', textDecoration: 'underline' }}>World Health Organization</a> emphasizes that mental health is a state of mental well-being that enables people to cope with the stresses of life.
-                        <br />Not sure if therapy is right for you?
+                    <h1 className="hero-title" style={{ fontSize: '3.5rem', marginBottom: '1.5rem', lineHeight: '1.2' }}>
+                        Professional Support for Your Mental Well-being.
+                    </h1>
+                    <p className="hero-subtitle" style={{ fontSize: '1.4rem', marginBottom: '3rem', opacity: 0.9 }}>
+                        Empowering you to navigate life's challenges with professional guidance and care.
                     </p>
-                    <Link to="/what-is-counselling" className="btn-link" style={{ color: 'var(--brand-teal)', fontWeight: '600', textDecoration: 'underline' }}>
-                        Read our guide on What is Counselling &rarr;
-                    </Link>
-                </div>
-            </section>
-
-            {/* NEW: How It Works Section */}
-            <section className="process-section">
-                <div className="container">
-                    <h2 className="section-title">How it works</h2>
-                    <p className="section-desc">Get matched with a therapist that fits your needs.</p>
-
-                    <div className="process-steps">
-                        <div className="step">
-                            <div className="step-circle">1</div>
-                            <h3>Get Matched</h3>
-                            <p>Answer a few questions to find a therapist that fits your specific needs and preferences.</p>
-                        </div>
-                        <div className="step">
-                            <div className="step-circle">2</div>
-                            <h3>Communicate</h3>
-                            <p>Talk to your therapist however you feel comfortable — text, chat, phone, or video.</p>
-                        </div>
-                        <div className="step">
-                            <div className="step-circle">3</div>
-                            <h3>Start Therapy</h3>
-                            <p>Begin your journey towards a happier, more fulfilling life with professional support.</p>
-                        </div>
+                    <div className="therapy-cards" style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                        <Link to="/individual-therapy" className="card" style={{ background: 'white', color: 'var(--text-dark)', padding: '30px', borderRadius: '12px', width: '300px', textAlign: 'left' }}>
+                            <span className="card-label" style={{ display: 'block', fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--brand-purple)' }}>Individual</span>
+                            <span className="card-sub" style={{ color: '#666' }}>Personalized therapy for yourself</span>
+                            <div className="card-arrow" style={{ marginTop: '20px', fontSize: '1.5rem', color: 'var(--brand-teal)' }}>&rarr;</div>
+                        </Link>
+                        <Link to="/corporate-services" className="card" style={{ background: 'white', color: 'var(--text-dark)', padding: '30px', borderRadius: '12px', width: '300px', textAlign: 'left' }}>
+                            <span className="card-label" style={{ display: 'block', fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--brand-green)' }}>Corporate</span>
+                            <span className="card-sub" style={{ color: '#666' }}>Wellness programs for your team</span>
+                            <div className="card-arrow" style={{ marginTop: '20px', fontSize: '1.5rem', color: 'var(--brand-teal)' }}>&rarr;</div>
+                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* NEW: Academy Foundations Section */}
-            <section className="academy-cta-section">
+            {/* NEW PROMINENT: Academy Foundations Section */}
+            <section className="academy-hero-cta" style={{ padding: '80px 0', background: '#fdfbf7' }}>
                 <div className="container">
-                    <div className="academy-content-wrapper">
-                        <div className="academy-image-container">
-                            <img src={foundationsLogo} alt="Foundations Counselling" className="academy-logo-img" />
+                    <div className="academy-wrapper" style={{ 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        gap: '60px', 
+                        background: 'white', 
+                        padding: '60px', 
+                        borderRadius: '30px', 
+                        boxShadow: '0 20px 50px rgba(0,0,0,0.05)',
+                        border: '1px solid #eee'
+                    }}>
+                        <div className="academy-img-box" style={{ flex: '1', textAlign: 'center' }}>
+                            <img src={foundationsLogo} alt="Foundations Counseling Academy" style={{ maxWidth: '300px', height: 'auto' }} />
                         </div>
-
-                        <div className="academy-text-container">
-                            <h2 className="academy-title">Academy Foundations</h2>
-                            <p className="academy-description">
-                                Take the next step in your mental health journey. Explore our specialized courses, 
-                                workshops, and resources designed to empower you with lasting foundations for well-being.
+                        <div className="academy-text-box" style={{ flex: '1.5' }}>
+                            <h2 style={{ fontSize: '2.5rem', color: 'var(--brand-purple)', marginBottom: '20px' }}>Foundations Counseling Academy</h2>
+                            <p style={{ fontSize: '1.2rem', color: '#555', marginBottom: '30px', lineHeight: '1.6' }}>
+                                Unlock your potential with our world-class mental health training and personal development courses. 
+                                Join thousands of learners building stronger emotional foundations.
                             </p>
-                            <a href="https://academyfoundations.com/" target="_blank" rel="noopener noreferrer" className="btn btn-solid academy-btn" id="academy-visit-btn">
+                            <a href="https://academyfoundations.com/" target="_blank" rel="noopener noreferrer" 
+                               className="btn-solid" 
+                               style={{ 
+                                   display: 'inline-block', 
+                                   padding: '18px 40px', 
+                                   background: 'var(--brand-teal)', 
+                                   color: 'white', 
+                                   borderRadius: '50px', 
+                                   fontSize: '1.1rem', 
+                                   fontWeight: 'bold',
+                                   boxShadow: '0 10px 20px rgba(42, 157, 143, 0.2)'
+                               }}>
                                 Visit the Academy &rarr;
                             </a>
                         </div>
@@ -157,83 +116,80 @@ const Home = () => {
                 </div>
             </section>
 
-
-            <section className="value-props">
+            {/* Stats Bar */}
+            <section className="stats-bar" style={{ padding: '40px 0', background: 'white', borderBottom: '1px solid #eee' }}>
                 <div className="container">
-                    <h2 className="section-title">Professional and qualified therapists who you can trust.</h2>
-                    <p className="section-desc">
-                        Tap into a network of experienced counselors from the comfort of your own home or office.
-                        Learn more about <Link to="/our-company" style={{ color: 'var(--brand-teal)', textDecoration: 'underline' }}>our company mission</Link> and standards.
-                    </p>
-
-                    <div className="comparison-table">
-                        <div className="comparison-row header">
-                            <div></div>
-                            <div className="col-brand">Pameltex</div>
-                            <div className="col-other">Traditional</div>
+                    <div className="stats-grid" style={{ display: 'flex', justifyContent: 'space-around', textAlign: 'center' }}>
+                        <div className="stat-item">
+                            <strong style={{ display: 'block', fontSize: '2rem', color: 'var(--brand-green)' }}>International</strong>
+                            <span style={{ fontSize: '0.9rem', color: '#888', fontWeight: 'bold' }}>ACCEPTED STANDARDS</span>
                         </div>
-                        <div className="comparison-row">
-                            <div className="feature">Convenience</div>
-                            <div className="col-brand">Online & In-Person</div>
-                            <div className="col-other">In-Office Only</div>
+                        <div className="stat-item">
+                            <strong style={{ display: 'block', fontSize: '2rem', color: 'var(--brand-green)' }}>Certified</strong>
+                            <span style={{ fontSize: '0.9rem', color: '#888', fontWeight: 'bold' }}>PROFESSIONAL COUNSELORS</span>
                         </div>
-                        <div className="comparison-row">
-                            <div className="feature">Protocols</div>
-                            <div className="col-brand">International</div>
-                            <div className="col-other">Varies</div>
-                        </div>
-                        <div className="comparison-row">
-                            <div className="feature">Corporate Support</div>
-                            <div className="col-brand">Specialized Programs</div>
-                            <div className="col-other">Limited</div>
-                        </div>
-                        <div className="comparison-row">
-                            <div className="feature">Cost</div>
-                            <div className="col-brand">Affordable</div>
-                            <div className="col-other">Expensive</div>
+                        <div className="stat-item">
+                            <strong style={{ display: 'block', fontSize: '2rem', color: 'var(--brand-green)' }}>Accessible</strong>
+                            <span style={{ fontSize: '0.9rem', color: '#888', fontWeight: 'bold' }}>ONLINE & IN-PERSON</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* NEW: Clients Section */}
-            <section className="clients-section">
-                <div className="container" style={{ textAlign: 'center', padding: '60px 0', borderTop: '1px solid #eee' }}>
-                    <h2 className="section-title" style={{ fontSize: '24px', opacity: 0.6, marginBottom: '40px' }}>Trusted by leading organizations</h2>
+            {/* How It Works */}
+            <section className="process-section" style={{ padding: '80px 0', background: 'white' }}>
+                <div className="container">
+                    <h2 className="section-title" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '50px' }}>How It Works</h2>
+                    <div className="process-steps" style={{ display: 'flex', gap: '40px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                        {[
+                            { num: 1, title: 'Get Matched', desc: 'Find the right therapist for your specific needs.' },
+                            { num: 2, title: 'Communicate', desc: 'Connect via text, chat, phone, or video.' },
+                            { num: 3, title: 'Start Therapy', desc: 'Begin your journey with professional support.' }
+                        ].map((step, i) => (
+                            <div key={i} className="step" style={{ flex: '1', minWidth: '250px', textAlign: 'center' }}>
+                                <div className="step-circle" style={{ 
+                                    width: '60px', height: '60px', background: 'var(--brand-light)', color: 'var(--brand-green)', 
+                                    borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+                                    fontSize: '1.5rem', fontWeight: 'bold', margin: '0 auto 20px' 
+                                }}>{step.num}</div>
+                                <h3 style={{ marginBottom: '10px' }}>{step.title}</h3>
+                                <p style={{ color: '#666' }}>{step.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Clients Section */}
+            <section className="clients-section" style={{ padding: '80px 0', background: '#f9f9f9' }}>
+                <div className="container" style={{ textAlign: 'center' }}>
+                    <h2 className="section-title" style={{ fontSize: '1.5rem', opacity: 0.5, marginBottom: '40px' }}>TRUSTED BY LEADING ORGANIZATIONS</h2>
                     <div className="clients-grid" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '60px', flexWrap: 'wrap' }}>
-                        <img src={clientLetlole} alt="Letlole La Rona" className="client-logo" style={{ height: '60px', opacity: 0.8, filter: 'grayscale(100%)', transition: 'all 0.3s' }}
-                            onMouseOver={e => e.currentTarget.style.filter = 'none'}
-                            onMouseOut={e => e.currentTarget.style.filter = 'grayscale(100%)'}
-                        />
-                        <img src={clientUnitrans} alt="Unitrans Botswana" className="client-logo" style={{ height: '50px', opacity: 0.8, filter: 'grayscale(100%)', transition: 'all 0.3s' }}
-                            onMouseOver={e => e.currentTarget.style.filter = 'none'}
-                            onMouseOut={e => e.currentTarget.style.filter = 'grayscale(100%)'}
-                        />
-                        <img src={clientLetshego} alt="Letshego" className="client-logo" style={{ height: '50px', opacity: 0.8, filter: 'grayscale(100%)', transition: 'all 0.3s' }}
-                            onMouseOver={e => e.currentTarget.style.filter = 'none'}
-                            onMouseOut={e => e.currentTarget.style.filter = 'grayscale(100%)'}
-                        />
+                        <img src={clientLetlole} alt="Letlole La Rona" style={{ height: '50px', filter: 'grayscale(100%)', opacity: 0.7 }} />
+                        <img src={clientUnitrans} alt="Unitrans Botswana" style={{ height: '40px', filter: 'grayscale(100%)', opacity: 0.7 }} />
+                        <img src={clientLetshego} alt="Letshego" style={{ height: '40px', filter: 'grayscale(100%)', opacity: 0.7 }} />
                     </div>
                 </div>
             </section>
 
-            {/* NEW: Testimonials Section */}
-            <section className="testimonials">
+            {/* Testimonials */}
+            <section className="testimonials" style={{ padding: '80px 0', background: 'white' }}>
                 <div className="container">
-                    <h2 className="section-title">Stories from our users</h2>
-                    <div className="testimonial-grid">
-                        <div className="testimonial-card">
-                            <p className="t-text">"Pameltex has completely changed my view on therapy. I can talk to my counselor from my office during lunch, which is a game changer for my schedule."</p>
-                            <span className="t-author">- Sarah K., Gaborone</span>
-                        </div>
-                        <div className="testimonial-card">
-                            <p className="t-text">"I was skeptical about online counseling, but my therapist was so understanding and professional. I feel heard for the first time in years."</p>
-                            <span className="t-author">- Michael T.</span>
-                        </div>
-                        <div className="testimonial-card">
-                            <p className="t-text">"The corporate wellness program introduced by Pameltex helped our team communicate better. Highly recommended for businesses."</p>
-                            <span className="t-author">- Letlole La Rona, CEO</span>
-                        </div>
+                    <h2 className="section-title" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '50px' }}>Voices of Hope</h2>
+                    <div className="testimonial-grid" style={{ display: 'flex', gap: '30px', overflowX: 'auto', paddingBottom: '20px' }}>
+                        {[
+                            { text: '"Pameltex has completely changed my view on therapy. Highly recommended."', author: 'Sarah K., Gaborone' },
+                            { text: '"Professional, compassionate, and accessible. The best support I\'ve had."', author: 'Michael T.' },
+                            { text: '"Their corporate program transformed our office culture and communication."', author: 'Letlole La Rona, CEO' }
+                        ].map((t, i) => (
+                            <div key={i} className="testimonial-card" style={{ 
+                                background: '#fdfbf7', padding: '40px', borderRadius: '15px', minWidth: '300px', flex: '1',
+                                borderTop: '5px solid var(--brand-purple)'
+                            }}>
+                                <p style={{ fontStyle: 'italic', marginBottom: '20px', color: '#444' }}>{t.text}</p>
+                                <strong style={{ color: 'var(--brand-purple)' }}>{t.author}</strong>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
