@@ -22,11 +22,11 @@ const Home = () => {
                     <img src={groupLogo} alt="Pameltex Group" style={{ maxWidth: '350px', marginBottom: '40px', filter: 'brightness(0) invert(1)' }} />
                     <h1 style={{ fontSize: '3.8rem', fontWeight: '800', marginBottom: '20px', letterSpacing: '-1px' }}>Driven for Impact.</h1>
                     <p style={{ fontSize: '1.5rem', opacity: 0.9, maxWidth: '800px', margin: '0 auto 50px', lineHeight: '1.4' }}>
-                        A multi-disciplinary group committed to transforming lives through mental health services, 
+                        A multi-disciplinary group committed to transforming lives through mental health services,
                         innovative technology, and specialized education.
                     </p>
                     <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-                         <a href="#ecosystem" className="btn-solid" style={{ background: 'var(--brand-teal)', padding: '18px 40px', borderRadius: '50px', fontSize: '1.1rem' }}>Explore Our Ecosystem</a>
+                        <a href="#ecosystem" className="btn-solid" style={{ background: 'var(--brand-teal)', padding: '18px 40px', borderRadius: '50px', fontSize: '1.1rem' }}>Explore Our Ecosystem</a>
                     </div>
                 </div>
             </section>
@@ -40,13 +40,13 @@ const Home = () => {
                     </p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
-                        
+
                         {/* Pillar 1: Psychosocial & Counseling */}
                         <div className="pillar-card" style={{ background: 'white', padding: '50px 40px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid #eee', transition: 'all 0.3s ease' }}>
                             <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🧠</div>
                             <h3 style={{ fontSize: '1.8rem', color: 'var(--brand-purple)', marginBottom: '15px' }}>Pameltex Psychosocial & Counseling</h3>
                             <p style={{ color: '#555', marginBottom: '25px', lineHeight: '1.6' }}>
-                                Professional mental health services, individual therapy, and corporate wellness programs 
+                                Professional mental health services, individual therapy, and corporate wellness programs
                                 delivered by certified specialists.
                             </p>
                             <Link to="/individual-therapy" style={{ color: 'var(--brand-teal)', fontWeight: '700', textDecoration: 'underline' }}>View Services &rarr;</Link>
@@ -55,14 +55,14 @@ const Home = () => {
                         {/* Pillar 2: Tech */}
                         <div className="pillar-card" style={{ background: 'white', padding: '50px 40px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid #eee', borderTop: '6px solid #8B1A3D' }}>
                             <div style={{ marginBottom: '20px' }}>
-                                <img src={techLogo} alt="Pameltex Tech" style={{ height: '70px' }} />
+                                <img src={techLogo} alt="Pameltech Labs" style={{ height: '70px' }} />
                             </div>
                             <h3 style={{ fontSize: '1.8rem', color: '#8B1A3D', marginBottom: '15px' }}>Pameltex Tech</h3>
                             <p style={{ color: '#555', marginBottom: '25px', lineHeight: '1.6' }}>
-                                Driving digital transformation in the healthcare space through innovative platforms, 
+                                Driving digital transformation in the healthcare space through innovative platforms,
                                 AI-driven insights, and tech-enabled support systems.
                             </p>
-                            <a href="https://tech.pameltex.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8B1A3D', fontWeight: '700', textDecoration: 'underline', display: 'block', marginTop: '10px' }}>Visit Pameltex Tech &rarr;</a>
+                            <a href="https://pameltechlabs.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8B1A3D', fontWeight: '700', textDecoration: 'underline', display: 'block', marginTop: '10px' }}>Visit Pameltex Tech &rarr;</a>
                         </div>
 
 
@@ -73,7 +73,7 @@ const Home = () => {
                             </div>
                             <h3 style={{ fontSize: '1.8rem', color: '#1a1a1a', marginBottom: '15px' }}>Foundations Counseling Academy</h3>
                             <p style={{ color: '#555', marginBottom: '25px', lineHeight: '1.6' }}>
-                                A premier learning institution providing specialized mental health courses, 
+                                A premier learning institution providing specialized mental health courses,
                                 professional training, and foundational wellness education.
                             </p>
                             <a href="https://academyfoundations.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-purple)', fontWeight: '700', textDecoration: 'underline' }}>Visit Academy &rarr;</a>
@@ -91,7 +91,7 @@ const Home = () => {
                 <div className="container">
                     <h2 style={{ fontSize: '2.5rem', marginBottom: '30px' }}>Our Mission is Impact.</h2>
                     <p style={{ fontSize: '1.3rem', opacity: 0.9, maxWidth: '800px', margin: '0 auto 40px', lineHeight: '1.6' }}>
-                        By bridging the gap between human empathy, technological innovation, and academic rigor, 
+                        By bridging the gap between human empathy, technological innovation, and academic rigor,
                         we are creating a future where mental well-being is accessible to all.
                     </p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap' }}>

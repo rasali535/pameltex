@@ -32,9 +32,10 @@ const IntakeForm = () => {
         
         // 4. Type of Support Needed (checkbox array)
         support: [],
+        support_other: '',
         
-        // 5. Current Emotional Wellbeing
-        wellbeing: '',
+        // 5. Current Emotional Wellbeing (checkboxes)
+        wellbeing_symptoms: [],
         
         // 6. Safety and Risk Screening
         self_harm: 'No',
@@ -44,7 +45,8 @@ const IntakeForm = () => {
         risk_details: '',
         
         // 7. Previous Support
-        previous_support: '',
+        previous_support_choice: 'No',
+        previous_support_details: '',
         medication: 'No',
         
         // 8. Virtual Session Readiness
@@ -56,7 +58,13 @@ const IntakeForm = () => {
         // 9. Consent
         consent_name: '',
         signature: '',
-        consent_date: new Date().toISOString().substring(0, 10)
+        consent_date: new Date().toISOString().substring(0, 10),
+
+        // 10. Office Use Only
+        office_practitioner: '',
+        office_session_type: 'Virtual',
+        office_date: '',
+        office_fee: ''
     });
 
     // Submission states
@@ -118,6 +126,32 @@ const IntakeForm = () => {
         updateFormData({ support: currentSupport });
     };
 
+    // Handle wellbeing symptom checkbox toggles
+    const handleWellbeingCheckbox = (value) => {
+        let currentSymptoms = [...formData.wellbeing_symptoms];
+        if (value === 'None of the above') {
+            if (currentSymptoms.includes('None of the above')) {
+                currentSymptoms = [];
+            } else {
+                currentSymptoms = ['None of the above'];
+            }
+        } else {
+            // Remove 'None of the above' if checking another symptom
+            const noneIndex = currentSymptoms.indexOf('None of the above');
+            if (noneIndex > -1) {
+                currentSymptoms.splice(noneIndex, 1);
+            }
+            
+            const index = currentSymptoms.indexOf(value);
+            if (index > -1) {
+                currentSymptoms.splice(index, 1);
+            } else {
+                currentSymptoms.push(value);
+            }
+        }
+        updateFormData({ wellbeing_symptoms: currentSymptoms });
+    };
+
     // Auto-fill form for quick demo/testing
     const handleAutofillDemo = () => {
         const demoData = {
@@ -134,13 +168,15 @@ const IntakeForm = () => {
             emergency_phone: '+267 71 888 888',
             reason: 'I have been experiencing mild work-related stress and anxiety over the last 3 months due to project deadlines. Looking to learn stress management techniques.',
             support: ['Individual counselling', 'Work stress', 'Anxiety'],
-            wellbeing: 'Overall, I feel okay physically but mentally drained. Some difficulty falling asleep, and I feel restless when thinking about work tasks in the evening.',
+            support_other: '',
+            wellbeing_symptoms: ['Sleep difficulties', 'Work-related pressure', 'Anxiety or panic'],
             self_harm: 'No',
             harm_others: 'No',
             unsafe: 'No',
             abuse: 'No',
             risk_details: '',
-            previous_support: 'Attended 2 counseling sessions back in 2022 for adjustment challenges. Found it helpful.',
+            previous_support_choice: 'Yes',
+            previous_support_details: 'Attended 2 counseling sessions back in 2022 for adjustment challenges. Found it helpful.',
             medication: 'No',
             readiness1: true,
             readiness2: true,
@@ -148,7 +184,11 @@ const IntakeForm = () => {
             readiness4: true,
             consent_name: 'John Doe',
             signature: 'John Doe',
-            consent_date: new Date().toISOString().substring(0, 10)
+            consent_date: new Date().toISOString().substring(0, 10),
+            office_practitioner: '',
+            office_session_type: 'Virtual',
+            office_date: '',
+            office_fee: ''
         };
         updateFormData(demoData);
         alert('Form auto-filled with demo data! You can click through steps or submit to test.');
@@ -167,13 +207,21 @@ const IntakeForm = () => {
         }
         if (step === 3) {
             if (!formData.reason.trim()) return 'Please explain the reason you are seeking therapy.';
-            if (formData.support.length === 0) return 'Please select at least one type of support needed.';
+            if (formData.support.length === 0 && !formData.support_other.trim()) {
+                return 'Please select at least one type of support needed or specify in "Other".';
+            }
         }
         if (step === 4) {
+            if (formData.wellbeing_symptoms.length === 0) {
+                return 'Please select at least one wellbeing symptom or choose "None of the above".';
+            }
             // If safety screening has 'Yes', they must explain in risk details
             const hasRisk = formData.self_harm === 'Yes' || formData.harm_others === 'Yes' || formData.unsafe === 'Yes' || formData.abuse === 'Yes';
             if (hasRisk && !formData.risk_details.trim()) {
                 return 'Please provide details in the explanation field for the safety risks flagged.';
+            }
+            if (formData.previous_support_choice === 'Yes' && !formData.previous_support_details.trim()) {
+                return 'Please describe your previous support details since you checked "Yes".';
             }
         }
         if (step === 5) {
@@ -221,10 +269,13 @@ const IntakeForm = () => {
         setSubmitError('');
 
         // Prepare data for Formspree
-        // Map support array to a string to make it readable in the email submission
         const submissionPayload = {
             ...formData,
-            support_needed_list: formData.support.join(', '),
+            support_needed_list: [
+                ...formData.support,
+                formData.support_other ? `Other: ${formData.support_other}` : null
+            ].filter(Boolean).join(', '),
+            wellbeing_symptoms_list: formData.wellbeing_symptoms.join(', '),
             virtual_readiness: [
                 formData.readiness1 ? 'Private space available' : null,
                 formData.readiness2 ? 'Reliable internet/phone' : null,
@@ -571,7 +622,7 @@ const IntakeForm = () => {
                                                             'Grief': 'Grief or loss',
                                                             'Anxiety': 'Anxiety or stress management',
                                                             'Relationships': 'Relationship challenges',
-                                                            'Growth': 'Personal growth'
+                                                            'Growth': 'Personal growth / life coaching'
                                                         };
                                                         const isChecked = formData.support.includes(item);
                                                         return (
@@ -588,6 +639,17 @@ const IntakeForm = () => {
                                                         );
                                                     })}
                                                 </div>
+
+                                                <div className="form-group" style={{ marginTop: '20px' }}>
+                                                    <label htmlFor="support_other">Other (please specify):</label>
+                                                    <input 
+                                                        type="text" 
+                                                        id="support_other"
+                                                        value={formData.support_other} 
+                                                        onChange={(e) => updateFormData({ support_other: e.target.value })}
+                                                        placeholder="e.g. Group therapy, trauma support, etc."
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
                                     )}
@@ -602,21 +664,40 @@ const IntakeForm = () => {
                                             </div>
 
                                             <div className="form-group">
-                                                <div className="textarea-label-wrapper">
-                                                    <label htmlFor="wellbeing">Current Emotional Wellbeing</label>
-                                                    <span className="char-count">{formData.wellbeing.length} characters</span>
+                                                <label style={{ marginBottom: '15px', display: 'block' }}>Current Emotional Wellbeing <span className="required-star">*</span> <small style={{ fontWeight: 'normal', color: '#666' }}>(Over the past two weeks, have you experienced any of the following? Select all that apply)</small></label>
+                                                
+                                                <div className="checkbox-grid" style={{ marginBottom: '25px' }}>
+                                                    {[
+                                                        'Persistent sadness',
+                                                        'Anxiety or panic',
+                                                        'Sleep difficulties',
+                                                        'Anger or irritability',
+                                                        'Loss of motivation',
+                                                        'Relationship conflict',
+                                                        'Work-related pressure',
+                                                        'Grief or major life change',
+                                                        'None of the above'
+                                                    ].map((item) => {
+                                                        const isChecked = formData.wellbeing_symptoms.includes(item);
+                                                        return (
+                                                            <div 
+                                                                key={item} 
+                                                                className={`checkbox-card ${isChecked ? 'checked' : ''}`}
+                                                                onClick={() => handleWellbeingCheckbox(item)}
+                                                            >
+                                                                <div className="checkbox-ui">
+                                                                    {isChecked && <span className="check-mark">✓</span>}
+                                                                </div>
+                                                                <span className="checkbox-label">{item}</span>
+                                                            </div>
+                                                        );
+                                                    })}
                                                 </div>
-                                                <textarea 
-                                                    id="wellbeing"
-                                                    rows="4"
-                                                    value={formData.wellbeing} 
-                                                    onChange={(e) => updateFormData({ wellbeing: e.target.value })}
-                                                    placeholder="How would you describe your general mood, sleep, appetite, or stress levels recently?"
-                                                ></textarea>
                                             </div>
 
                                             <div className="screening-questions" style={{ marginTop: '25px' }}>
                                                 <h3>Safety & Risk Screening</h3>
+                                                <p style={{ fontSize: '13px', color: '#666', marginTop: '-15px', marginBottom: '20px' }}>This section helps us understand whether urgent support may be needed.</p>
                                                 
                                                 <div className="select-row-grid">
                                                     <div className="form-group select-group">
@@ -646,7 +727,7 @@ const IntakeForm = () => {
                                                     </div>
 
                                                     <div className="form-group select-group">
-                                                        <label htmlFor="unsafe">Feeling unsafe?</label>
+                                                        <label htmlFor="unsafe">Feeling unsafe in home/relationship/environment?</label>
                                                         <select 
                                                             id="unsafe"
                                                             value={formData.unsafe} 
@@ -659,7 +740,7 @@ const IntakeForm = () => {
                                                     </div>
 
                                                     <div className="form-group select-group">
-                                                        <label htmlFor="abuse">Exposure to abuse or violence?</label>
+                                                        <label htmlFor="abuse">Exposure to abuse, violence, or threats?</label>
                                                         <select 
                                                             id="abuse"
                                                             value={formData.abuse} 
@@ -713,19 +794,36 @@ const IntakeForm = () => {
                                             </div>
 
                                             <div className="previous-support-section" style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid #eee' }}>
-                                                <div className="form-group">
-                                                    <label htmlFor="previous_support">Previous Therapy / Counselling Support</label>
-                                                    <textarea 
-                                                        id="previous_support"
-                                                        rows="3"
-                                                        value={formData.previous_support} 
-                                                        onChange={(e) => updateFormData({ previous_support: e.target.value })}
-                                                        placeholder="Have you seen a counselor, therapist, or psychiatrist before? What was your experience?"
-                                                    ></textarea>
+                                                <h3>Previous Support & Medications</h3>
+                                                
+                                                <div className="form-group select-group" style={{ maxWidth: '300px', marginBottom: '15px' }}>
+                                                    <label htmlFor="previous_support_choice">Have you received counselling, therapy, psychiatric, or psychological support before? <span className="required-star">*</span></label>
+                                                    <select 
+                                                        id="previous_support_choice"
+                                                        value={formData.previous_support_choice} 
+                                                        onChange={(e) => updateFormData({ previous_support_choice: e.target.value })}
+                                                    >
+                                                        <option value="No">No</option>
+                                                        <option value="Yes">Yes</option>
+                                                    </select>
                                                 </div>
 
+                                                {formData.previous_support_choice === 'Yes' && (
+                                                    <div className="form-group animate-fade-in">
+                                                        <label htmlFor="previous_support_details">If yes, please briefly describe: <span className="required-star">*</span></label>
+                                                        <textarea 
+                                                            id="previous_support_details"
+                                                            rows="3"
+                                                            value={formData.previous_support_details} 
+                                                            onChange={(e) => updateFormData({ previous_support_details: e.target.value })}
+                                                            placeholder="Describe any previous therapy sessions, what was helpful, and any diagnoses..."
+                                                            required={formData.previous_support_choice === 'Yes'}
+                                                        ></textarea>
+                                                    </div>
+                                                )}
+
                                                 <div className="form-group select-group" style={{ maxWidth: '300px', marginTop: '15px' }}>
-                                                    <label htmlFor="medication">Are you currently taking any psychiatric medications?</label>
+                                                    <label htmlFor="medication">Are you currently taking any medication related to mental health or emotional wellbeing? <span className="required-star">*</span></label>
                                                     <select 
                                                         id="medication"
                                                         value={formData.medication} 
@@ -751,7 +849,7 @@ const IntakeForm = () => {
 
                                             <div className="readiness-checklist">
                                                 <h3>Virtual Session Readiness</h3>
-                                                <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px' }}>To engage in virtual therapy, you must confirm that you meet the following conditions:</p>
+                                                <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px' }}>For virtual therapy, please confirm:</p>
                                                 
                                                 <div className="readiness-options">
                                                     <label className="checkbox-row">
@@ -761,7 +859,7 @@ const IntakeForm = () => {
                                                             onChange={(e) => updateFormData({ readiness1: e.target.checked })}
                                                         />
                                                         <div className="checkbox-custom-ui"></div>
-                                                        <span className="readiness-text">I have a private space available where I will not be overheard or interrupted.</span>
+                                                        <span className="readiness-text">I have access to a private and quiet space for sessions.</span>
                                                     </label>
 
                                                     <label className="checkbox-row">
@@ -771,7 +869,7 @@ const IntakeForm = () => {
                                                             onChange={(e) => updateFormData({ readiness2: e.target.checked })}
                                                         />
                                                         <div className="checkbox-custom-ui"></div>
-                                                        <span className="readiness-text">I have access to a reliable internet connection or telephone signal.</span>
+                                                        <span className="readiness-text">I have reliable internet or phone access.</span>
                                                     </label>
 
                                                     <label className="checkbox-row">
@@ -781,7 +879,7 @@ const IntakeForm = () => {
                                                             onChange={(e) => updateFormData({ readiness3: e.target.checked })}
                                                         />
                                                         <div className="checkbox-custom-ui"></div>
-                                                        <span className="readiness-text">I agree NOT to drive or perform other hazardous tasks during virtual sessions.</span>
+                                                        <span className="readiness-text">I understand that I should not attend a virtual session while driving or in an unsafe location.</span>
                                                     </label>
 
                                                     <label className="checkbox-row">
@@ -791,25 +889,26 @@ const IntakeForm = () => {
                                                             onChange={(e) => updateFormData({ readiness4: e.target.checked })}
                                                         />
                                                         <div className="checkbox-custom-ui"></div>
-                                                        <span className="readiness-text">I understand the limits of virtual confidentiality and agree to the terms of therapy.</span>
+                                                        <span className="readiness-text">I understand that confidentiality may be affected if I am in a shared or public space.</span>
                                                     </label>
                                                 </div>
                                             </div>
 
                                             <div className="consent-statement-card">
-                                                <h3>Consent for Virtual Counselling</h3>
-                                                <p>By signing below, I consent to participate in virtual counselling sessions with Foundations Counselling Academy / Pameltex Psychosocial & Counselling Services. I understand that counselling is a collaborative process and that virtual services have specific boundaries and confidentiality limits, which have been outlined to me. I acknowledge that I can withdraw this consent at any time.</p>
+                                                <h3>Consent and Confidentiality</h3>
+                                                <p>I understand that counselling sessions are confidential. I also understand that confidentiality may need to be broken where there is serious risk of harm to myself, another person, a child, or where required by law.</p>
+                                                <p style={{ marginTop: '10px' }}>I consent to receiving counselling services virtually.</p>
                                             </div>
 
                                             <div className="form-grid" style={{ marginTop: '20px' }}>
                                                 <div className="form-group">
-                                                    <label htmlFor="consent_name">Full Name <span className="required-star">*</span></label>
+                                                    <label htmlFor="consent_name">Client Name <span className="required-star">*</span></label>
                                                     <input 
                                                         type="text" 
                                                         id="consent_name"
                                                         value={formData.consent_name} 
                                                         onChange={(e) => updateFormData({ consent_name: e.target.value })}
-                                                        placeholder="Confirm your full name" 
+                                                        placeholder="Confirm client name" 
                                                         required
                                                     />
                                                 </div>
@@ -845,8 +944,64 @@ const IntakeForm = () => {
                                                     )}
                                                 </div>
                                             </div>
+
+                                            {/* 10. For Office Use Only */}
+                                            <div className="office-use-card" style={{ marginTop: '35px', padding: '25px', backgroundColor: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: '12px' }}>
+                                                <h3 style={{ fontSize: '15px', fontWeight: '700', color: '#4b5563', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>10. For Office Use Only</h3>
+                                                
+                                                <div className="form-grid">
+                                                    <div className="form-group">
+                                                        <label htmlFor="office_practitioner" style={{ color: '#9ca3af', fontWeight: 'normal' }}>Assigned Practitioner</label>
+                                                        <input 
+                                                            type="text" 
+                                                            id="office_practitioner"
+                                                            value={formData.office_practitioner} 
+                                                            placeholder="Practitioner initials / code (to be completed by staff)" 
+                                                            disabled
+                                                        />
+                                                    </div>
+
+                                                    <div className="form-group">
+                                                        <label htmlFor="office_session_type" style={{ color: '#9ca3af', fontWeight: 'normal' }}>Session Type</label>
+                                                        <select 
+                                                            id="office_session_type"
+                                                            value={formData.office_session_type} 
+                                                            disabled
+                                                        >
+                                                            <option value="Virtual">Virtual</option>
+                                                            <option value="In-person">In-person</option>
+                                                            <option value="Hybrid">Hybrid</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div className="form-group">
+                                                        <label htmlFor="office_date" style={{ color: '#9ca3af', fontWeight: 'normal' }}>Initial Appointment Date</label>
+                                                        <input 
+                                                            type="text" 
+                                                            id="office_date"
+                                                            placeholder="Date (to be completed by staff)" 
+                                                            disabled
+                                                        />
+                                                    </div>
+
+                                                    <div className="form-group">
+                                                        <label htmlFor="office_fee" style={{ color: '#9ca3af', fontWeight: 'normal' }}>Fee / Payment Arrangement</label>
+                                                        <input 
+                                                            type="text" 
+                                                            id="office_fee"
+                                                            placeholder="Fee / code (to be completed by staff)" 
+                                                            disabled
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     )}
+
+                                    {/* Footer Note */}
+                                    <p style={{ fontSize: '11px', color: '#9ca3af', textAlign: 'center', marginTop: '25px', lineHeight: '1.4', fontStyle: 'italic', borderTop: '1px solid #f3f4f6', paddingTop: '15px' }}>
+                                        This form is completed for intake and professional service planning purposes only. All information provided will be handled confidentially and in line with ethical counselling practice and applicable data protection requirements.
+                                    </p>
 
                                     {/* Action Buttons */}
                                     <div className="intake-form-actions">
