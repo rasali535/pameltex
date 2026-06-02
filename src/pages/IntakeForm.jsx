@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const IntakeForm = () => {
-    // Read Formspree ID from env or default to placeholder
-    const formspreeId = import.meta.env.VITE_FORMSPREE_ID || 'YOUR_FORM_ID';
+    // Read Formspree ID from env or default to fallback
+    const formspreeId = import.meta.env.VITE_FORMSPREE_ID || 'xdajqjev';
     const isPlaceholderId = formspreeId === 'YOUR_FORM_ID';
 
     // State for wizard step (1 to 5)
