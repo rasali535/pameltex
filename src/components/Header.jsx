@@ -18,6 +18,7 @@ const Header = () => {
                     <Link to="/corporate-services" className="nav-link" onClick={() => setIsMenuOpen(false)}>Corporate Services</Link>
                     <Link to="/consultancy-services" className="nav-link" onClick={() => setIsMenuOpen(false)}>Consultancy Services</Link>
                     <Link to="/faq" className="nav-link" onClick={() => setIsMenuOpen(false)}>FAQ</Link>
+                    <Link to="/intake" className="nav-link" onClick={() => setIsMenuOpen(false)}>Intake Form</Link>
                     <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
                     <Link to="/login" className="btn btn-outline" onClick={() => setIsMenuOpen(false)}>Sign In</Link>
                     <Link to="/signup" className="btn btn-solid" onClick={() => setIsMenuOpen(false)}>Sign Up</Link>

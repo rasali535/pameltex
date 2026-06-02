@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const Booking = () => {
@@ -112,9 +113,10 @@ const Booking = () => {
                                 <h3>What to Expect</h3>
                                 <ol className="booking-steps">
                                     <li><span>1</span> Choose your preferred date and time above</li>
-                                    <li><span>2</span> We'll confirm your booking via phone or email</li>
-                                    <li><span>3</span> Attend your session in-person or online</li>
-                                    <li><span>4</span> Begin your journey to better wellbeing</li>
+                                    <li><span>2</span> Complete our secure online <Link to="/intake" style={{ color: 'var(--brand-teal)', textDecoration: 'underline', fontWeight: 'bold' }}>Intake Form</Link></li>
+                                    <li><span>3</span> We'll confirm your booking via phone or email</li>
+                                    <li><span>4</span> Attend your session in-person or online</li>
+                                    <li><span>5</span> Begin your journey to better wellbeing</li>
                                 </ol>
                             </div>
                         </div>
