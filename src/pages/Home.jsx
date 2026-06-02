@@ -57,12 +57,12 @@ const Home = () => {
                             <div style={{ marginBottom: '20px' }}>
                                 <img src={techLogo} alt="Pameltech Labs" style={{ height: '70px' }} />
                             </div>
-                            <h3 style={{ fontSize: '1.8rem', color: '#8B1A3D', marginBottom: '15px' }}>Pameltex Tech</h3>
+                            <h3 style={{ fontSize: '1.8rem', color: '#8B1A3D', marginBottom: '15px' }}>Pameltech Labs</h3>
                             <p style={{ color: '#555', marginBottom: '25px', lineHeight: '1.6' }}>
                                 Driving digital transformation in the healthcare space through innovative platforms,
                                 AI-driven insights, and tech-enabled support systems.
                             </p>
-                            <a href="https://pameltechlabs.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8B1A3D', fontWeight: '700', textDecoration: 'underline', display: 'block', marginTop: '10px' }}>Visit Pameltex Tech &rarr;</a>
+                            <a href="https://www.pameltechlabs.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8B1A3D', fontWeight: '700', textDecoration: 'underline', display: 'block', marginTop: '10px' }}>Visit Pameltech Labs &rarr;</a>
                         </div>
 
 
