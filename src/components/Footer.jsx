@@ -14,7 +14,7 @@ const Footer = () => {
                     <Link to="/contact" style={{ color: '#555' }}>Contact Us</Link>
                 </div>
                 <p style={{ marginTop: '30px', fontSize: '11px', color: '#aaa' }}>
-                    Web dev by <a href="https:www.rasalilabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#aaa', textDecoration: 'underline' }}>Ras Ali</a>
+                    Web dev by <a href="https://www.rasalilabs.com" target="_blank" rel="noopener noreferrer" style={{ color: '#aaa', textDecoration: 'underline' }}>Ras Ali Labs</a>
                 </p>
             </div>
         </footer>
