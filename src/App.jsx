@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header     from './components/Header';
 import Footer     from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import { FCA } from './config/site';
 
 // ── New corporate pages ───────────────────────────────────────────────────────
 import Home                 from './pages/Home';
@@ -19,21 +21,21 @@ import Terms          from './pages/Terms';
 import PaymentOptions from './pages/PaymentOptions';
 import NotFound       from './pages/NotFound';
 
-// ── Legacy pages — FCA pending routes (still served until FCA URLs confirmed) ──
-// These must remain imported while /individual-therapy, /what-is-counselling,
-// /booking and /intake serve the legacy React components.
-// Remove these imports when external FCA redirects are implemented.
-import IndividualTherapy  from './pages/IndividualTherapy';
-import WhatIsCounselling  from './pages/WhatIsCounselling';
-import Booking            from './pages/Booking';
-import IntakeForm         from './pages/IntakeForm';
+// ── Legacy portal / FAQ pages (preserved) ──
 import FAQ                from './pages/FAQ';
 import Login              from './pages/Login';
 import SignUp             from './pages/SignUp';
 import Dashboard          from './pages/Dashboard';
-// Resources, CorporateServices, ConsultancyServices: now Navigate redirects — no import needed.
+
+const ExternalRedirect = ({ href }) => {
+    useEffect(() => {
+        window.location.replace(href);
+    }, [href]);
+    return null;
+};
 
 function App() {
+
     return (
         <Router>
             <ScrollToTop />
@@ -63,13 +65,12 @@ function App() {
                     <Route path="/corporate-services"   element={<Navigate to="/psychosocial-risk" replace />} />
                     <Route path="/resources"            element={<Navigate to="/insights" replace />} />
 
-                    {/* ── FCA PENDING ROUTES ── */}
-                    {/* Serving legacy pages until FCA destination URLs are confirmed.   */}
-                    {/* Replace with external redirects once FCA URLs are approved.     */}
-                    <Route path="/individual-therapy"   element={<IndividualTherapy />} />
-                    <Route path="/what-is-counselling"  element={<WhatIsCounselling />} />
-                    <Route path="/booking"              element={<Booking />} />
-                    <Route path="/intake"               element={<IntakeForm />} />
+                    {/* ── FCA EXTERNAL REDIRECTS ── */}
+                    <Route path="/individual-therapy"   element={<ExternalRedirect href={FCA.baseUrl} />} />
+                    <Route path="/what-is-counselling"  element={<ExternalRedirect href={FCA.baseUrl} />} />
+                    <Route path="/booking"              element={<ExternalRedirect href={FCA.baseUrl} />} />
+                    <Route path="/intake"               element={<ExternalRedirect href={FCA.baseUrl} />} />
+
                     <Route path="/faq"                  element={<FAQ />} />
                     <Route path="/login"                element={<Login />} />
                     <Route path="/signup"               element={<SignUp />} />

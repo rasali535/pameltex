@@ -31,17 +31,16 @@ export const WEBSITE_URL   = 'https://www.pameltex.com';
 export const GA4_MEASUREMENT_ID = ''; // e.g. 'G-XXXXXXXXXX' — awaiting Pameltex
 
 // ─── FCA (Foundations Counselling Academy) ────────────────────────────────────
-// All FCA URLs are PENDING CONFIRMATION from Pameltex.
-// Do NOT invent or guess these URLs.
 export const FCA = {
-  baseUrl:         'PENDING_FCA_URL_CONFIRMATION',
-  individualTherapy: 'PENDING_FCA_URL_CONFIRMATION',
-  whatIsCounselling: 'PENDING_FCA_URL_CONFIRMATION',
-  booking:           'PENDING_FCA_URL_CONFIRMATION',
-  intake:            'PENDING_FCA_URL_CONFIRMATION',
+  baseUrl:           'https://academyfoundations.com/counselling',
+  individualTherapy: 'https://academyfoundations.com/counselling',
+  whatIsCounselling: 'https://academyfoundations.com/counselling',
+  booking:           'https://academyfoundations.com/counselling',
+  intake:            'https://academyfoundations.com/counselling',
   displayName:       'Foundations Counselling Academy (FCA)',
   shortName:         'FCA',
 };
+
 
 // ─── Pameltech Labs ───────────────────────────────────────────────────────────
 export const PAMELTECH = {

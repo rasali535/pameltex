@@ -4,15 +4,14 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
-# ── LEGACY ROUTE REDIRECTS (PHASE 3) ──────────────────────────────────────
-# These redirect old counselling/therapy URLs to their equivalent corporate pages.
-# They preserve indexed inbound links and prevent 404 for previously crawled URLs.
-#
-# FCA DESTINATION REDIRECTS — STATUS: PENDING FCA URL CONFIRMATION
-# /individual-therapy, /what-is-counselling, /booking, /intake
-# DO NOT redirect these to FCA until the destination URLs are officially confirmed.
-# Currently handled in the React router (pages preserved, not 404).
-#
+# ── FCA COUNSELLING REDIRECTS (OFFICIAL) ──────────────────────────────────
+# Directs legacy therapy/counselling traffic to Foundations Counselling Academy
+RewriteRule ^individual-therapy/?$ https://academyfoundations.com/counselling [R=301,L]
+RewriteRule ^what-is-counselling/?$ https://academyfoundations.com/counselling [R=301,L]
+RewriteRule ^booking/?$ https://academyfoundations.com/counselling [R=301,L]
+RewriteRule ^intake/?$ https://academyfoundations.com/counselling [R=301,L]
+
+# ── LEGACY CORPORATE ROUTE REDIRECTS ──────────────────────────────────────
 # CONSULTANCY → BUSINESS CONSULTING (approved equivalence)
 RewriteRule ^consultancy-services/?$ /business-consulting [R=301,L]
 # CORPORATE-SERVICES → PSYCHOSOCIAL RISK (closest corporate equivalent)
@@ -21,6 +20,7 @@ RewriteRule ^corporate-services/?$ /psychosocial-risk [R=301,L]
 RewriteRule ^our-company/?$ /about [R=301,L]
 # RESOURCES → INSIGHTS (closest B2B equivalent)
 RewriteRule ^resources/?$ /insights [R=301,L]
+
 
 # ── SPA ROUTING ────────────────────────────────────────────────────────────
 # All requests that are not real files or directories serve index.html.
