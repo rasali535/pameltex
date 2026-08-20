@@ -139,7 +139,7 @@ const About = () => (
                             verified and approved.
                         </div>
                         <p style={{ fontSize: '0.9rem', color: 'var(--c-text-mid)' }}>
-                            Contact: <a href="mailto:csithole@pameltex.com" style={{ color: 'var(--c-teal)' }}>csithole@pameltex.com</a>
+                            Contact: <a href="mailto:info@pameltex.com" style={{ color: 'var(--c-teal)' }}>info@pameltex.com</a>
                         </p>
                     </div>
                 </div>

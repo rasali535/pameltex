@@ -12,12 +12,10 @@
  */
 
 // ─── Contact Details ─────────────────────────────────────────────────────────
-// PHONE: Awaiting formal confirmation from Pameltex.
-// Do not treat this as a verified number.
-export const PHONE_DISPLAY = '[Phone — PENDING CONFIRMATION]';
-export const PHONE_HREF    = ''; // e.g. 'tel:+26772534203' once confirmed
+export const PHONE_DISPLAY = '+267 72 534 203';
+export const PHONE_HREF    = 'tel:+26772534203';
 
-export const EMAIL_PRIMARY = 'csithole@pameltex.com';
+export const EMAIL_PRIMARY = 'info@pameltex.com';
 export const EMAIL_GENERAL = 'info@pameltex.com';
 
 export const ADDRESS_LINE1 = 'Plot 18680, Khuhurutse Street, Phase 2';

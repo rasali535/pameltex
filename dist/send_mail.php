@@ -17,16 +17,10 @@
  *  - No sensitive logging
  *  - No secrets in source
  *
- * EMAIL RECIPIENT — PAMELTEX APPROVAL REQUIRED
- *   The current recipient is info@pameltex.com (legacy value from previous endpoint).
- *   Do not change MAIL_TO without written Pameltex confirmation of the final
- *   production receiving mailbox.
- *
- *   Candidate destinations:
- *     - info@pameltex.com  (current legacy)
- *     - csithole@pameltex.com  (brief specifies this as business contact)
- *   STATUS: PENDING PAMELTEX DECISION
+ * EMAIL RECIPIENT
+ *   Production recipient: info@pameltex.com
  */
+
 
 // ── CONFIGURATION ──────────────────────────────────────────────────────────
 

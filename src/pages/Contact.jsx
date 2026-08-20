@@ -162,7 +162,7 @@ const Contact = () => {
             <SEO
                 title="Contact Pameltex | Request a Consultation — Botswana"
                 description="Request a corporate consultation or workplace HSE assessment from Pameltex. Serving organisations in Botswana and the SADC region."
-                keywords="contact Pameltex, request consultation Botswana, HSE assessment request, psychosocial risk consultation, csithole@pameltex.com"
+                keywords="contact Pameltex, request consultation Botswana, HSE assessment request, psychosocial risk consultation, info@pameltex.com"
             />
 
             {/* Page Hero */}

@@ -31,7 +31,7 @@ const Privacy = () => (
                     <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '12px' }}>1. Who we are</h2>
                     <p style={{ marginBottom: '20px', color: 'var(--c-text-mid)' }}>
                         Pameltex (Pty) Ltd (registration BW00000405550), Plot 18680, Khuhurutse Street,
-                        Phase 2, Gaborone, Botswana. Contact: csithole@pameltex.com.
+                        Phase 2, Gaborone, Botswana. Contact: info@pameltex.com.
                     </p>
                     <p style={{ marginBottom: '32px', color: 'var(--c-text-light)', fontStyle: 'italic' }}>
                         [ CONTENT REQUIRED: Full privacy policy to be supplied and approved by Pameltex.
