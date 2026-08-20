@@ -1,37 +1,113 @@
 RewriteEngine On
 
-# Redirect non-www to www
+# ── NON-WWW TO WWW REDIRECT ────────────────────────────────────────────────
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
-# Redirect all requests to index.html for SPA routing
+# ── LEGACY ROUTE REDIRECTS (PHASE 3) ──────────────────────────────────────
+# These redirect old counselling/therapy URLs to their equivalent corporate pages.
+# They preserve indexed inbound links and prevent 404 for previously crawled URLs.
+#
+# FCA DESTINATION REDIRECTS — STATUS: PENDING FCA URL CONFIRMATION
+# /individual-therapy, /what-is-counselling, /booking, /intake
+# DO NOT redirect these to FCA until the destination URLs are officially confirmed.
+# Currently handled in the React router (pages preserved, not 404).
+#
+# CONSULTANCY → BUSINESS CONSULTING (approved equivalence)
+RewriteRule ^consultancy-services/?$ /business-consulting [R=301,L]
+# CORPORATE-SERVICES → PSYCHOSOCIAL RISK (closest corporate equivalent)
+RewriteRule ^corporate-services/?$ /psychosocial-risk [R=301,L]
+# OUR-COMPANY → ABOUT (same page, new URL)
+RewriteRule ^our-company/?$ /about [R=301,L]
+# RESOURCES → INSIGHTS (closest B2B equivalent)
+RewriteRule ^resources/?$ /insights [R=301,L]
+
+# ── SPA ROUTING ────────────────────────────────────────────────────────────
+# All requests that are not real files or directories serve index.html.
+# This allows React Router to handle client-side routing on direct access and refresh.
+# MUST come after the legacy redirects above.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [QSA,L]
 
-# BROWSER CACHING
+# ── BROWSER CACHING ────────────────────────────────────────────────────────
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresByType image/jpg "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/gif "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType image/avif "access plus 1 year"
-  ExpiresByType image/x-icon "access plus 1 year"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType image/jpg          "access plus 1 year"
+  ExpiresByType image/jpeg         "access plus 1 year"
+  ExpiresByType image/gif          "access plus 1 year"
+  ExpiresByType image/png          "access plus 1 year"
+  ExpiresByType image/webp         "access plus 1 year"
+  ExpiresByType image/svg+xml      "access plus 1 year"
+  ExpiresByType image/avif         "access plus 1 year"
+  ExpiresByType image/x-icon       "access plus 1 year"
+  ExpiresByType text/css           "access plus 1 month"
+  ExpiresByType text/javascript    "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
-  ExpiresDefault "access plus 1 week"
+  ExpiresDefault                   "access plus 1 week"
 </IfModule>
 
 <IfModule mod_headers.c>
+  # Asset caching
   <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|svg|avif|js|css|swf)$">
     Header set Cache-Control "max-age=31536000, public"
   </FilesMatch>
+
+  # ── SECURITY HEADERS ─────────────────────────────────────────────────────
+  # X-Frame-Options: prevent clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # X-Content-Type-Options: prevent MIME sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Referrer-Policy: send referrer only to same origin
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # X-XSS-Protection: legacy browsers (Chrome/Edge removed support, but kept for IE)
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Permissions-Policy: disable unused browser features
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+  # Content-Security-Policy
+  # NOTE: This is a starting-point policy.
+  # If external scripts (GA4, Facebook Pixel etc.) are added, their domains
+  # must be added to script-src and connect-src.
+  # Do not widen this policy without a documented reason.
+  Header always set Content-Security-Policy "\
+default-src 'self'; \
+script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; \
+style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; \
+font-src 'self' https://fonts.gstatic.com; \
+img-src 'self' data: https:; \
+connect-src 'self'; \
+frame-src 'none'; \
+object-src 'none'; \
+base-uri 'self'; \
+form-action 'self'; \
+upgrade-insecure-requests"
+
+  # HSTS: enforce HTTPS for 1 year (includes subdomains)
+  # WARNING: Only enable HSTS when HTTPS is confirmed stable on this domain.
+  # Uncomment the line below when ready:
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 </IfModule>
 
-# DISABLE DIRECTORY BROWSING
+# ── DISABLE DIRECTORY BROWSING ─────────────────────────────────────────────
 Options -Indexes
 IndexIgnore *
+
+# ── PROTECT SENSITIVE FILES ────────────────────────────────────────────────
+# Prevent direct access to configuration and backup files
+<FilesMatch "\.(env|bak|sql|log|sh|swp|orig)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# ── PHP CONFIGURATION ──────────────────────────────────────────────────────
+# Suppress PHP version disclosure from non-API responses.
+# send_mail.php adds X-Powered-By itself via PHP headers if needed.
+# Note: Hostinger CDN may override this header at edge level.
+<IfModule mod_php.c>
+  php_flag expose_php Off
+</IfModule>

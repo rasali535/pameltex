@@ -80,14 +80,17 @@ const Contact = () => {
 
         const fd = new FormData();
         fd.append('type', 'Corporate Consultation Request');
-        Object.entries(consult).forEach(([k, v]) => { if (k !== 'hp' && k !== 'consent') fd.append(k, v); });
+        Object.entries(consult).forEach(([k, v]) => { if (k !== 'hp' && k !== 'consent') fd.append(k, String(v)); });
 
         try {
             const res = await fetch('/send_mail.php', { method: 'POST', body: fd });
-            if (res.ok) {
+            const json = await res.json().catch(() => ({ status: res.status }));
+            if (res.ok && json.status === 200) {
                 setConsultState('success');
                 setConsult(INITIAL_CONSULT);
-            } else throw new Error('Server error');
+            } else {
+                setConsultState('error');
+            }
         } catch {
             setConsultState('error');
         }
@@ -106,15 +109,18 @@ const Contact = () => {
         Object.entries(hse).forEach(([k, v]) => {
             if (k === 'hp' || k === 'consent') return;
             if (k === 'hazards') fd.append(k, v.join(', '));
-            else fd.append(k, v);
+            else fd.append(k, String(v));
         });
 
         try {
             const res = await fetch('/send_mail.php', { method: 'POST', body: fd });
-            if (res.ok) {
+            const json = await res.json().catch(() => ({ status: res.status }));
+            if (res.ok && json.status === 200) {
                 setHseState('success');
                 setHse(INITIAL_HSE);
-            } else throw new Error('Server error');
+            } else {
+                setHseState('error');
+            }
         } catch {
             setHseState('error');
         }

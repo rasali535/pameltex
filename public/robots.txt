@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
 
+# Block form endpoint from indexing
+Disallow: /send_mail.php
+
+# Block legacy counselling pages from being indexed
+# (still served for link preservation; not for search indexing)
+Disallow: /individual-therapy
+Disallow: /what-is-counselling
+Disallow: /booking
+Disallow: /intake
+Disallow: /login
+Disallow: /signup
+Disallow: /dashboard
+
 Sitemap: https://www.pameltex.com/sitemap.xml
