@@ -23,16 +23,17 @@ const CorporateServices = () => {
                     })}
                 </script>
             </SEO>
-            <section className="business-hero">
+            <section className="page-hero page-hero--corporate">
                 <div className="container">
-                    <h1 className="hero-title" style={{ fontSize: '42px', maxWidth: '800px', margin: '0 auto 20px' }}>
+                    <span className="eyebrow">Workforce Wellbeing</span>
+                    <h1 style={{ color: '#fff', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, marginBottom: '16px' }}>
                         Mental health benefits for your workforce
                     </h1>
-                    <p className="hero-subtitle" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                        Support your employees with the most convenient and affordable professional therapy service in Botswana.
+                    <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', maxWidth: '640px', lineHeight: 1.7, marginBottom: '24px' }}>
+                        Support your employees with confidential, professional and structured support in Botswana and the SADC region.
                     </p>
-                    <Link to="/contact" className="btn btn-solid" style={{ backgroundColor: '#fff', color: 'var(--brand-green)', borderColor: '#fff' }}>
-                        Request a Demo
+                    <Link to="/contact" className="btn btn--primary btn--lg">
+                        Request a Consultation
                     </Link>
                 </div>
             </section>

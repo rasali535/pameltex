@@ -71,13 +71,13 @@ const BusinessConsulting = () => (
         </SEO>
 
         {/* Page Hero */}
-        <section className="page-hero">
+        <section className="page-hero page-hero--corporate">
             <div className="container">
                 <span className="eyebrow">Consulting Service — 03</span>
                 <h1 style={{ color: '#fff', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, marginBottom: '16px', maxWidth: '720px' }}>
                     Business & Organisational Consulting
                 </h1>
-                <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '1.1rem', maxWidth: '640px', lineHeight: 1.7 }}>
+                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', maxWidth: '640px', lineHeight: 1.7 }}>
                     Practical consulting on strategy, systems, governance and compliance.
                     From understanding to implementation — not reports that sit on shelves.
                 </p>

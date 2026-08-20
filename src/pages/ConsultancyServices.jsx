@@ -66,20 +66,24 @@ const ConsultancyServices = () => {
                     })}
                 </script>
             </SEO>
-            <section className="business-hero" style={{ background: 'linear-gradient(rgba(50, 80, 60, 0.9), rgba(50, 80, 60, 0.8)), url(https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80) no-repeat center center/cover' }}>
+            <section className="page-hero page-hero--corporate">
                 <div className="container">
-                    <h1 className="hero-title" style={{ fontSize: '42px', maxWidth: '800px', margin: '0 auto 20px' }}>
+                    <span className="eyebrow">Strategic Consulting</span>
+                    <h1 style={{ color: '#fff', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, marginBottom: '16px' }}>
                         Expert Consultancy Services
                     </h1>
-                    <p className="hero-subtitle" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                        Driving growth and excellence through strategic solutions.
+                    <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', maxWidth: '640px', lineHeight: 1.7, marginBottom: '24px' }}>
+                        Driving growth and operational excellence through strategic solutions and rigorous governance.
                     </p>
                     <button
                         onClick={() => {
-                            Calendly.initPopupWidget({ url: 'https://calendly.com/pameltex-info/30min' });
+                            if (window.Calendly) {
+                                window.Calendly.initPopupWidget({ url: 'https://calendly.com/pameltex-info/30min' });
+                            }
                             return false;
                         }}
-                        className="btn btn-solid" style={{ backgroundColor: '#fff', color: 'var(--brand-teal)', borderColor: '#fff', padding: '12px 30px', border: 'none', cursor: 'pointer', fontWeight: 'bold' }}>
+                        className="btn btn--primary btn--lg"
+                    >
                         Get in Touch
                     </button>
                 </div>

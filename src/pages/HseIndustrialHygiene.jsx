@@ -66,13 +66,13 @@ const HseIndustrialHygiene = () => (
         </SEO>
 
         {/* Page Hero */}
-        <section className="page-hero">
+        <section className="page-hero page-hero--industrial">
             <div className="container">
                 <span className="eyebrow">Consulting Service — 02</span>
                 <h1 style={{ color: '#fff', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, marginBottom: '16px', maxWidth: '720px' }}>
                     HSE & Industrial Hygiene
                 </h1>
-                <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '1.1rem', maxWidth: '640px', lineHeight: 1.7 }}>
+                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', maxWidth: '640px', lineHeight: 1.7 }}>
                     Structured assessment, evaluation and control of physical workplace hazards.
                     Evidence-based findings. Practical corrective-action planning.
                 </p>

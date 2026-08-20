@@ -1,5 +1,6 @@
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
+import carolineImg from '../assets/caroline.jpg';
 import {
     COMPANY_NAME, COMPANY_REG,
     ADDRESS_LINE1, ADDRESS_LINE2,
@@ -40,13 +41,13 @@ const About = () => (
         </SEO>
 
         {/* Page Hero */}
-        <section className="page-hero">
+        <section className="page-hero page-hero--regional">
             <div className="container">
                 <span className="eyebrow">About the Organisation</span>
                 <h1 style={{ color: '#fff', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, marginBottom: '16px' }}>
                     About Pameltex
                 </h1>
-                <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '1.1rem', maxWidth: '640px', lineHeight: 1.7 }}>
+                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', maxWidth: '640px', lineHeight: 1.7 }}>
                     A registered Botswana corporate consulting organisation. Practical, integrated consulting
                     for organisations that need to understand risk, protect people and strengthen systems.
                 </p>
@@ -122,25 +123,104 @@ const About = () => (
         </section>
 
         {/* Leadership */}
-        <section className="section bg-stone">
+        <section className="section bg-stone" aria-label="Leadership">
             <div className="container">
                 <div className="section-header">
                     <span className="eyebrow">Leadership</span>
                     <h2 className="heading-lg">The team behind Pameltex</h2>
+                    <p>
+                        Multidisciplinary consulting leadership uniting psychosocial risk, occupational health and safety,
+                        and practical business strategy.
+                    </p>
                 </div>
-                <div style={{ maxWidth: '640px' }}>
-                    <div style={{ background: 'var(--c-white)', border: '1px solid var(--c-border-light)', borderRadius: '16px', padding: '36px 32px' }}>
-                        <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--c-navy)', marginBottom: '4px' }}>Caroline Sithole</h3>
-                        <p style={{ fontSize: '0.875rem', color: 'var(--c-teal)', fontWeight: 600, marginBottom: '16px' }}>Founder & Principal Consultant</p>
-                        <div className="pending-notice" style={{ marginBottom: '16px' }}>
-                            <strong>CONTENT REQUIRED FROM PAMELTEX:</strong> Please supply Caroline Sithole's approved
-                            biography, credentials, professional memberships and any qualifications or
-                            certifications to be published. Do not publish credentials that have not been
-                            verified and approved.
+                <div style={{ maxWidth: '980px' }}>
+                    <div className="leader-profile-card">
+                        <div className="leader-profile-card__media">
+                            <div className="leader-profile-card__avatar-wrap">
+                                <img
+                                    src={carolineImg}
+                                    alt="Caroline Sithole — Founder of Pameltex Group"
+                                    className="leader-profile-card__avatar"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <span className="leader-profile-card__title-badge">Founder | Pameltex Group (Pty) Ltd</span>
                         </div>
-                        <p style={{ fontSize: '0.9rem', color: 'var(--c-text-mid)' }}>
-                            Contact: <a href="mailto:info@pameltex.com" style={{ color: 'var(--c-teal)' }}>info@pameltex.com</a>
-                        </p>
+
+                        <div className="leader-profile-card__content">
+                            <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--c-navy)', marginBottom: '6px' }}>
+                                Caroline Sithole
+                            </h3>
+                            <p className="leader-profile-card__lead-role">
+                                Corporate Risk, Psychosocial Risk & Business Consulting Lead
+                            </p>
+
+                            <p className="leader-profile-card__bio">
+                                Caroline Sithole is a multidisciplinary consultant, psychotherapist, trainer and business coach
+                                with extensive experience supporting organisations to build safer, healthier and more productive workplaces.
+                            </p>
+
+                            <p className="leader-profile-card__bio">
+                                As the founder of Pameltex Group (Pty) Ltd, Caroline leads integrated consulting work across psychosocial
+                                risk, occupational health and safety, industrial hygiene, workplace wellbeing, organisational development
+                                and business systems improvement. Her work brings together people-focused insight and practical business
+                                strategy, helping leaders identify risks, strengthen teams and create sustainable workplace performance.
+                            </p>
+
+                            <p className="leader-profile-card__bio">
+                                Caroline has worked with corporates, institutions and operational teams across Botswana and the wider region,
+                                supporting employee wellbeing, compliance readiness, workplace culture improvement, leadership development
+                                and risk-informed decision-making.
+                            </p>
+
+                            <p className="leader-profile-card__bio">
+                                Her approach is practical, confidential and results-driven. She believes that businesses perform better when
+                                people are protected, systems are clear and leadership is intentional.
+                            </p>
+
+                            <div style={{ marginTop: '24px' }}>
+                                <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--c-navy)', marginBottom: '12px' }}>
+                                    Areas of Expertise
+                                </h4>
+                                <div className="expertise-list-grid">
+                                    {[
+                                        'Psychosocial risk assessment and mitigation',
+                                        'Corporate wellness and employee support programmes',
+                                        'Occupational health, safety and industrial hygiene consulting',
+                                        'Workplace culture, team development and productivity',
+                                        'Leadership coaching and business systems improvement',
+                                        'Training design, facilitation and organisational development',
+                                    ].map(item => (
+                                        <div key={item} className="expertise-item">
+                                            <span className="expertise-item__dot" aria-hidden="true">•</span>
+                                            <span>{item}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="leader-focus-box">
+                                <h4 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--c-navy)', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                                    Professional Focus
+                                </h4>
+                                <p style={{ marginBottom: '10px' }}>
+                                    Caroline’s work is centred on helping organisations move from reactive problem-solving to proactive risk management,
+                                    stronger people systems and healthier work environments.
+                                </p>
+                                <p style={{ fontStyle: 'italic', fontWeight: 600, color: 'var(--c-teal)' }}>
+                                    Driven for impact. Built for people. Focused on sustainable business performance.
+                                </p>
+                            </div>
+
+                            <div style={{ marginTop: '24px', display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+                                <Link to="/contact" className="btn btn--primary">
+                                    Request a Consultation with Caroline
+                                </Link>
+                                <a href={`mailto:${EMAIL_PRIMARY}`} className="btn btn--ghost-dark">
+                                    Direct Contact: {EMAIL_PRIMARY}
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

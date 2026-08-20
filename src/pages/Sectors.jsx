@@ -49,13 +49,13 @@ const Sectors = () => (
         />
 
         {/* Page Hero */}
-        <section className="page-hero">
+        <section className="page-hero page-hero--regional">
             <div className="container">
                 <span className="eyebrow">Where We Work</span>
                 <h1 style={{ color: '#fff', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, marginBottom: '16px' }}>
                     Sectors We Serve
                 </h1>
-                <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '1.1rem', maxWidth: '640px', lineHeight: 1.7 }}>
+                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', maxWidth: '640px', lineHeight: 1.7 }}>
                     Pameltex consulting is sector-adapted. The risks, regulatory context and operational
                     realities differ significantly across industries.
                 </p>
