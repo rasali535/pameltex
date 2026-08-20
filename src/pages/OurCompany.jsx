@@ -1,131 +1,203 @@
 import SEO from '../components/SEO';
-import profileImg from '../assets/profile-placeholder.png';
-import alpheausImg from '../assets/alpheaus.jpg';
-import thamuImg from '../assets/thamu.jpg';
-import carolineImg from '../assets/caroline.jpg';
+import { Link } from 'react-router-dom';
+import {
+    COMPANY_NAME, COMPANY_REG,
+    ADDRESS_LINE1, ADDRESS_LINE2,
+    EMAIL_PRIMARY, WEBSITE_URL,
+} from '../config/site';
 
-const OurCompany = () => {
-    return (
-        <>
-            <SEO
-                title="About Us"
-                description="Learn about Pameltex Psychosocial & Counseling, a leading provider of psychosocial services in Botswana. Meet our professional team of certified counselors."
-                keywords="about Pameltex, counseling services Botswana, mental health professionals Gaborone, psychosocial support team"
-            >
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "AboutPage",
-                        "mainEntity": {
-                            "@type": "Organization",
-                            "name": "Pameltex Psychosocial & Counseling",
-                            "employee": [
-                                {
-                                    "@type": "Person",
-                                    "name": "Caroline Sithole",
-                                    "jobTitle": "Principal Counsellor",
-                                    "description": "Board-certified counsellor majoring in Cognitive Behavioral Therapy (CBT)."
-                                },
-                                {
-                                    "@type": "Person",
-                                    "name": "Thamu X Gordon Mthupa",
-                                    "jobTitle": "Lead Counselor"
-                                }
-                            ]
-                        }
-                    })}
-                </script>
-            </SEO>
-            <section className="hero page-hero" style={{ padding: '60px 0', background: 'var(--bg-dark)' }}>
-                <div className="container">
-                    <h1 className="hero-title" style={{ fontSize: '36px' }}>Our Company</h1>
-                    <p className="hero-subtitle">Leading innovation in psychosocial support and mental health consultancy.</p>
-                </div>
-            </section>
-            <section className="content-section">
-                <div className="container">
-                    <div className="two-col-grid"
-                        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', marginTop: '60px' }}>
-                        <div>
-                            <h2 className="section-title" style={{ textAlign: 'left' }}>Who We Are</h2>
-                            <p style={{ marginBottom: '20px' }}>Pameltex (pty) Ltd, commonly known as Pameltex Psychosocial and
-                                Counselling, is a leading provider of psychosocial services in Botswana. We are dedicated to
-                                helping humanity by improving the quality of life through professional support.</p>
-                            <p>We pride ourselves on being a low-cost provider that never compromises on quality, using
-                                internationally accepted treatment and referral protocols to ensure the best care for our
-                                clients.</p>
-                        </div>
-                        <div>
-                            <div className="mission-box"
-                                style={{ background: '#fff', padding: '30px', borderLeft: '4px solid var(--brand-purple)', boxShadow: '0 5px 15px rgba(0,0,0,0.05)' }}>
-                                <h3 style={{ color: 'var(--brand-teal)', marginBottom: '10px' }}>Our Mission</h3>
-                                <p>To provide friendly and professional psycho-social support, counselling, and practical
-                                    mental health solutions that empower individuals to live happier lives.</p>
+/**
+ * CONTENT REQUIRED FROM PAMELTEX:
+ *  - Caroline Sithole's approved biography and credentials
+ *  - Any professional memberships or certifications to publish
+ *  - Any additional leadership team members
+ *  - Approved description of consulting methodology and experience
+ *  - Group brand history / founding narrative
+ */
+
+const About = () => (
+    <>
+        <SEO
+            title={`About Pameltex | Corporate Consulting — Botswana`}
+            description="Pameltex (Pty) Ltd is a registered Botswana corporate consulting organisation specialising in psychosocial risk, HSE and industrial hygiene, and business systems consulting."
+            keywords="Pameltex Botswana, corporate consulting firm Botswana, Gaborone consulting, Pameltex about, Caroline Sithole"
+        >
+            <script type="application/ld+json">{JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                'name': COMPANY_NAME,
+                'url': WEBSITE_URL,
+                'logo': `${WEBSITE_URL}/logo.png`,
+                'address': {
+                    '@type': 'PostalAddress',
+                    'streetAddress': ADDRESS_LINE1,
+                    'addressLocality': 'Gaborone',
+                    'addressCountry': 'BW',
+                },
+                'email': EMAIL_PRIMARY,
+                'description': 'Corporate consulting organisation specialising in psychosocial risk, HSE and industrial hygiene, and business systems consulting in Botswana.',
+            })}</script>
+        </SEO>
+
+        {/* Page Hero */}
+        <section className="page-hero">
+            <div className="container">
+                <span className="eyebrow">About the Organisation</span>
+                <h1 style={{ color: '#fff', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, marginBottom: '16px' }}>
+                    About Pameltex
+                </h1>
+                <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '1.1rem', maxWidth: '640px', lineHeight: 1.7 }}>
+                    A registered Botswana corporate consulting organisation. Practical, integrated consulting
+                    for organisations that need to understand risk, protect people and strengthen systems.
+                </p>
+            </div>
+        </section>
+
+        {/* Identity */}
+        <section className="section bg-stone">
+            <div className="container">
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'start' }}>
+                    <div>
+                        <span className="eyebrow">Corporate Identity</span>
+                        <h2 className="heading-lg" style={{ marginBottom: '20px' }}>Who we are</h2>
+                        <p className="body-lg" style={{ marginBottom: '16px' }}>
+                            Pameltex (Pty) Ltd is a corporate consulting and contracting organisation
+                            registered in Botswana. We specialise in three integrated disciplines:
+                            psychosocial risk consulting, HSE and industrial hygiene, and business and
+                            organisational consulting.
+                        </p>
+                        <p className="body-md" style={{ marginBottom: '16px' }}>
+                            Our work is grounded in the conviction that people, workplaces and organisational
+                            systems are connected — and that sustainable performance requires all three to
+                            be managed effectively.
+                        </p>
+                        <p className="body-md">
+                            We operate primarily in Botswana and serve clients across the wider SADC region.
+                        </p>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                        {[
+                            { label: 'Legal Entity',       value: COMPANY_NAME },
+                            { label: 'Registration',       value: COMPANY_REG },
+                            { label: 'Registered Office',  value: `${ADDRESS_LINE1}, ${ADDRESS_LINE2}` },
+                            { label: 'Business Contact',   value: EMAIL_PRIMARY },
+                            { label: 'Primary Market',     value: 'Botswana' },
+                            { label: 'Service Region',     value: 'Botswana and SADC' },
+                        ].map(({ label, value }) => (
+                            <div key={label} style={{ background: 'var(--c-white)', border: '1px solid var(--c-border-light)', borderRadius: '8px', padding: '16px 20px', display: 'grid', gridTemplateColumns: '160px 1fr', gap: '12px' }}>
+                                <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: 'var(--c-text-light)', textTransform: 'uppercase', letterSpacing: '1px' }}>{label}</span>
+                                <span style={{ fontSize: '0.9375rem', color: 'var(--c-navy)', fontWeight: 500 }}>{value}</span>
                             </div>
-                            <div className="vision-box"
-                                style={{ background: '#fff', padding: '30px', borderLeft: '4px solid var(--brand-teal)', boxShadow: '0 5px 15px rgba(0,0,0,0.05)', marginTop: '20px' }}>
-                                <h3 style={{ color: 'var(--brand-purple)', marginBottom: '10px' }}>Our Vision</h3>
-                                <p>To grow as the best affordable psycho-social support provider and consultancy in the
-                                    country.</p>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section className="team-section" style={{ background: '#fffcf6', padding: '80px 0', marginTop: '60px' }}>
-                <div className="container">
-                    <h2 className="section-title">Meet Our Team</h2>
-                    {/* Principal Counselor - Full Width */}
-                    <div className="team-card"
-                        style={{ background: 'white', maxWidth: '900px', margin: '0 auto 40px auto', display: 'flex', overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <div className="team-img" style={{ flex: 1, minWidth: '300px', background: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <img src={carolineImg} alt="Caroline Sithole" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                        </div>
-                        <div className="team-info" style={{ padding: '40px', flex: 1.5, minWidth: '300px' }}>
-                            <h3 style={{ fontSize: '28px', color: 'var(--brand-purple)', marginBottom: '5px' }}>Caroline Sithole
-                            </h3>
-                            <p style={{ color: '#666', fontWeight: '600', marginBottom: '20px', fontSize: '18px' }}>MSc, BSc, PSY — Principal
-                                Counsellor</p>
-                            <p style={{ marginBottom: '15px', fontSize: '16px' }}>Caroline is a board-certified counsellor majoring in Cognitive
-                                Behavioral Therapy (CBT). Her philosophy is to act as a mentor, guiding clients toward
-                                self-reliance and self-discovery.</p>
-                            <p className="team-quote" style={{ fontStyle: 'italic', color: 'var(--brand-teal)' }}>"My mission is to help people live happier, more fulfilling lives through professional
-                                guidance and support."</p>
-                        </div>
-                    </div>
+        {/* Purpose & Philosophy */}
+        <section className="section bg-white">
+            <div className="container">
+                <div style={{ maxWidth: '760px' }}>
+                    <span className="eyebrow">Consulting Philosophy</span>
+                    <h2 className="heading-lg" style={{ marginBottom: '20px' }}>How we think about our work</h2>
+                    <p className="body-lg" style={{ marginBottom: '16px' }}>
+                        Understand risk. Protect people. Strengthen systems. Improve performance.
+                    </p>
+                    <p className="body-md" style={{ marginBottom: '16px' }}>
+                        That sequence is intentional. You cannot sustainably improve performance in an organisation
+                        where risk is unmanaged, people are unprotected or systems are weak. Pameltex approaches
+                        consulting in that order.
+                    </p>
+                    <p className="body-md" style={{ marginBottom: '16px' }}>
+                        We are not a training provider, a wellness programme operator or a generic management
+                        consultancy. We are a practical, applied consulting organisation that works with
+                        organisations on specific, defined problems — and delivers work that can be acted on.
+                    </p>
+                    <p className="body-md">
+                        Implementation matters as much as diagnosis. Our consulting is structured to move from
+                        assessment to corrective action to verification — not to produce reports that sit on shelves.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-                    {/* Thamu Gordon Mthupa */}
-                    <div className="team-card"
-                        style={{ background: 'white', maxWidth: '900px', margin: '0 auto 40px auto', display: 'flex', overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', flexDirection: 'row-reverse', flexWrap: 'wrap' }}>
-                        <div className="team-img" style={{ flex: 1, minWidth: '300px', background: '#e0f7fa', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <img src={thamuImg} alt="Thamu Gordon Mthupa" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} />
+        {/* Leadership */}
+        <section className="section bg-stone">
+            <div className="container">
+                <div className="section-header">
+                    <span className="eyebrow">Leadership</span>
+                    <h2 className="heading-lg">The team behind Pameltex</h2>
+                </div>
+                <div style={{ maxWidth: '640px' }}>
+                    <div style={{ background: 'var(--c-white)', border: '1px solid var(--c-border-light)', borderRadius: '16px', padding: '36px 32px' }}>
+                        <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--c-navy)', marginBottom: '4px' }}>Caroline Sithole</h3>
+                        <p style={{ fontSize: '0.875rem', color: 'var(--c-teal)', fontWeight: 600, marginBottom: '16px' }}>Founder & Principal Consultant</p>
+                        <div className="pending-notice" style={{ marginBottom: '16px' }}>
+                            <strong>CONTENT REQUIRED FROM PAMELTEX:</strong> Please supply Caroline Sithole's approved
+                            biography, credentials, professional memberships and any qualifications or
+                            certifications to be published. Do not publish credentials that have not been
+                            verified and approved.
                         </div>
-                        <div className="team-info" style={{ padding: '40px', flex: 1.5, minWidth: '300px' }}>
-                            <h3 style={{ fontSize: '24px', color: 'var(--brand-purple)', marginBottom: '5px' }}>Thamu X Gordon Mthupa</h3>
-                            <p style={{ color: '#666', fontWeight: '600', marginBottom: '20px', fontSize: '18px' }}>Lead Counselor</p>
-                            <p style={{ marginBottom: '15px', fontSize: '16px' }}>Thamu leads our counseling department with compassion and expertise. He is dedicated to fostering a supportive environment for our clients and guiding our team.</p>
-                            <p className="team-quote" style={{ fontStyle: 'italic', color: 'var(--brand-teal)' }}>"Empowering individuals to overcome life's challenges is at the heart of everything we do."</p>
-                        </div>
-                    </div>
-
-                    {/* Alpheaus Chiwaze */}
-                    <div className="team-card"
-                        style={{ background: 'white', maxWidth: '900px', margin: '0 auto 40px auto', display: 'flex', overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <div className="team-img" style={{ flex: 1, minWidth: '300px', background: '#f3e5f5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <img src={alpheausImg} alt="Alpheaus Chiwaze" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
-                        </div>
-                        <div className="team-info" style={{ padding: '40px', flex: 1.5, minWidth: '300px' }}>
-                            <h3 style={{ fontSize: '24px', color: 'var(--brand-purple)', marginBottom: '5px' }}>Alpheaus Chiwaze</h3>
-                            <p style={{ color: '#666', fontWeight: '600', marginBottom: '20px', fontSize: '18px' }}>Head of Operations</p>
-                            <p style={{ marginBottom: '15px', fontSize: '16px' }}>Alpheaus is a multi-disciplinary creative and technologist specializing in premium web design, development, and digital experiences.</p>
-                            <p className="team-quote" style={{ fontStyle: 'italic', color: 'var(--brand-teal)' }}>"Technology bridges the gap between expert care and those who need it most."</p>
-                        </div>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--c-text-mid)' }}>
+                            Contact: <a href="mailto:csithole@pameltex.com" style={{ color: 'var(--c-teal)' }}>csithole@pameltex.com</a>
+                        </p>
                     </div>
                 </div>
-            </section>
-        </>
-    );
-};
+            </div>
+        </section>
 
-export default OurCompany;
+        {/* Group architecture */}
+        <section className="section bg-white">
+            <div className="container">
+                <div className="section-header">
+                    <span className="eyebrow">Group Structure</span>
+                    <h2 className="heading-lg">Pameltex Group brand architecture</h2>
+                    <p>
+                        Pameltex (Pty) Ltd is the corporate consulting entity. Two specialist brands
+                        operate under the group umbrella with distinct mandates.
+                    </p>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', maxWidth: '900px' }}>
+                    {[
+                        {
+                            name: 'Pameltex (Pty) Ltd',
+                            role: 'Corporate consulting entity',
+                            scope: 'Psychosocial Risk · HSE & Industrial Hygiene · Business Consulting',
+                            highlight: true,
+                        },
+                        {
+                            name: 'Foundations Counselling Academy (FCA)',
+                            role: 'Specialist counselling & training brand',
+                            scope: 'Individual counselling · EAP delivery · Workplace mental-health training',
+                            highlight: false,
+                        },
+                        {
+                            name: 'Pameltech Labs',
+                            role: 'Specialist technology brand',
+                            scope: 'AI · Automation · SaaS · Digital products · R&D',
+                            highlight: false,
+                        },
+                    ].map(({ name, role, scope, highlight }) => (
+                        <div key={name} style={{ background: highlight ? 'var(--c-navy)' : 'var(--c-stone)', border: `1px solid ${highlight ? 'var(--c-navy)' : 'var(--c-border-light)'}`, borderRadius: '12px', padding: '28px 24px' }}>
+                            {highlight && <span className="tag" style={{ background: 'rgba(255,255,255,0.12)', color: 'var(--c-teal-light)', marginBottom: '12px', display: 'inline-flex' }}>This entity</span>}
+                            <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: highlight ? '#fff' : 'var(--c-navy)', marginBottom: '6px' }}>{name}</h3>
+                            <p style={{ fontSize: '0.8rem', fontWeight: 600, color: highlight ? 'var(--c-teal-light)' : 'var(--c-teal)', marginBottom: '10px' }}>{role}</p>
+                            <p style={{ fontSize: '0.875rem', color: highlight ? 'rgba(255,255,255,0.65)' : 'var(--c-text-mid)' }}>{scope}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        {/* CTA */}
+        <section className="cta-band">
+            <div className="container">
+                <h2 className="heading-lg" style={{ color: '#fff' }}>Work with Pameltex</h2>
+                <p>Tell us about your organisation and the risks or systems challenges you need support with.</p>
+                <Link to="/contact" className="btn btn--ghost btn--lg">Request a Consultation</Link>
+            </div>
+        </section>
+    </>
+);
+
+export default About;
