@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Header     from './components/Header';
 import Footer     from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import ChatBot    from './components/ChatBot';
 
 // ── New corporate pages ───────────────────────────────────────────────────────
 import Home                 from './pages/Home';
@@ -80,7 +79,6 @@ function App() {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
-            <ChatBot />
             <Footer />
         </Router>
     );

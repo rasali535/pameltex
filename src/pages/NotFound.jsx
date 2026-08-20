@@ -5,16 +5,21 @@ const NotFound = () => {
     return (
         <>
             <SEO
-                title="404 - Not Found"
+                title="404 - Page Not Found"
                 description="The page you are looking for does not exist."
             >
                 <meta name="robots" content="noindex, nofollow" />
             </SEO>
-            <section className="hero page-hero" style={{ padding: '100px 0', background: 'var(--bg-dark)' }}>
+            <section className="page-hero" aria-label="404 error">
                 <div className="container">
-                    <h1 className="hero-title" style={{ fontSize: '36px' }}>404 - Page Not Found</h1>
-                    <p className="hero-subtitle">The page you are looking for does not exist.</p>
-                    <Link to="/" className="btn btn-solid">Return Home</Link>
+                    <span className="eyebrow">Error 404</span>
+                    <h1 style={{ color: '#fff', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, marginBottom: '16px' }}>
+                        Page Not Found
+                    </h1>
+                    <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '1.1rem', maxWidth: '580px', lineHeight: 1.7, marginBottom: '32px' }}>
+                        The page you requested could not be found. It may have been moved, renamed, or is no longer available.
+                    </p>
+                    <Link to="/" className="btn btn--primary btn--lg">Return to Homepage</Link>
                 </div>
             </section>
         </>
@@ -22,3 +27,4 @@ const NotFound = () => {
 };
 
 export default NotFound;
+
